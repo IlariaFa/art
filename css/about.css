@@ -1,0 +1,262 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   PAGE ABOUT
+======================================== */
+
+body.about-page {
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   LIEN RETOUR
+======================================== */
+
+.back-home {
+  position: fixed;
+
+  top: 28px;
+  left: 32px;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 15px;
+
+  z-index: 100;
+
+  transition: opacity 0.3s ease;
+}
+
+.back-home:hover {
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   CONTENEUR PRINCIPAL
+======================================== */
+
+.about-layout {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 120px 7vw 140px;
+}
+
+
+/* ========================================
+   BLOCS DE TEXTE
+======================================== */
+
+.about-section {
+  position: relative;
+}
+
+.about-section h1,
+.about-section h2 {
+  margin: 0 0 24px;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.about-section p {
+  margin: 0 0 20px;
+
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   BIO + PHOTO
+======================================== */
+
+.bio-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 78%;
+
+  margin-left: 12%;
+  margin-bottom: 150px;
+
+  gap: 35px;
+}
+
+.bio {
+  width: 55%;
+  max-width: 680px;
+}
+
+.about-photo {
+  width: 250px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* ========================================
+   PRACTICE / RESEARCH
+======================================== */
+
+.practice {
+  width: 48%;
+
+  margin-left: 6%;
+  margin-bottom: 140px;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+  width: 30%;
+
+  margin-left: auto;
+  margin-right: 10%;
+}
+
+.contact p {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+}
+
+.contact a {
+  color: #111;
+  text-decoration: none;
+
+  transition: text-shadow 0.35s ease;
+}
+
+.contact a:hover {
+  text-shadow:
+    0 0 4px rgba(19, 169, 106, 0.95),
+    0 0 9px rgba(19, 169, 106, 0.65),
+    0 0 18px rgba(19, 169, 106, 0.30);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .back-home {
+    top: 20px;
+    left: 20px;
+  }
+
+
+  .about-layout {
+    padding:
+      90px
+      20px
+      100px;
+  }
+
+
+  /* BIO */
+
+  .bio-row {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    width: 100%;
+
+    margin-left: 0;
+    margin-bottom: 100px;
+
+    gap: 35px;
+  }
+
+
+  .bio {
+    width: 88%;
+
+    margin-left: 0;
+  }
+
+
+  .bio p {
+    font-size: 19px;
+  }
+
+
+  /* PHOTO */
+
+  .about-photo {
+    width: 70%;
+
+    margin: 0;
+  }
+
+
+  /* PRACTICE */
+
+  .practice {
+    width: 88%;
+
+    margin-left: 0;
+    margin-bottom: 90px;
+  }
+
+
+  .practice p {
+    font-size: 19px;
+  }
+
+
+  /* CONTACT */
+
+  .contact {
+    width: 70%;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
+  .contact p {
+    font-size: 19px;
+  }
+
+}

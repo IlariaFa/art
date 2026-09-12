@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Building Imaginary Cities — Ilaria Fantini</title>
+
+  <link rel="stylesheet" href="../css/maquettes.css">
+</head>
+
+<body class="maquettes-page">
+
+  <a class="back-link" href="./workshops.html">← workshops</a>
+
+
+  <main class="maquettes-layout">
+
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+
+    <header class="maquettes-header">
+
+      <p class="project-label">
+        WORKSHOP
+      </p>
+
+      <h1>
+        Building Imaginary Cities
+      </h1>
+
+      <p class="project-meta">
+        L’Armillaire — Centre Culturel de Jette, Brussels<br>
+        August 2020
+      </p>
+
+    </header>
+
+
+    <!-- ========================================
+         VIDEO
+    ========================================= -->
+
+    <section class="maquettes-video">
+
+      <iframe
+        src="https://player.vimeo.com/video/1225575503"
+        title="Building Imaginary Cities workshop"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+    </section>
+
+
+    <!-- ========================================
+         DESCRIPTION
+    ========================================= -->
+
+    <section class="maquettes-text">
+
+      <p>
+        Inspired by excerpts from Italo Calvino’s
+        <em>Invisible Cities</em>, this workshop invited participants
+        to imagine and build their own utopian cities: magical places
+        where water could take on the colours of a rainbow and cars
+        could fly like birds.
+      </p>
+
+      <p>
+        The process began with drawings and plans before moving into
+        three-dimensional construction using a variety of materials
+        and supports.
+      </p>
+
+      <p>
+        Working with clay and other materials, participants created
+        animals, wells, swings and other elements inhabiting these
+        imaginary environments. The cities gradually became spaces
+        for collective play and storytelling, eventually coming to life
+        through a treasure hunt and board games.
+      </p>
+
+    </section>
+
+
+    <!-- ========================================
+         PHOTOS
+    ========================================= -->
+
+    <section class="maquettes-gallery">
+
+      <p class="gallery-label">
+        PHOTOS
+      </p>
+
+
+      <div class="gallery-row">
+
+        <button
+          class="gallery-arrow gallery-prev"
+          type="button"
+          aria-label="Previous image"
+        >
+          &lt;
+        </button>
+
+
+        <div class="gallery-stage">
+
+          <img
+            class="gallery-image active"
+            src="../images/maquette_1.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_2.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_3.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_4.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_5.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_6.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_7.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_8.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_9.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_10.jpg"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_11.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_12.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_13.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_14.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_15.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_16.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_17.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+          <img
+            class="gallery-image"
+            src="../images/maquette_18.JPG"
+            alt="Building Imaginary Cities workshop"
+          >
+
+        </div>
+
+
+        <button
+          class="gallery-arrow gallery-next"
+          type="button"
+          aria-label="Next image"
+        >
+          &gt;
+        </button>
+
+      </div>
+
+
+      <p class="gallery-counter">
+        <span id="current-image">1</span>
+        /
+        <span id="total-images">18</span>
+      </p>
+
+    </section>
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="maquettes-footer">
+
+      <a href="./workshops.html">
+        ← all workshops
+      </a>
+
+    </footer>
+
+  </main>
+
+<script>
+  const images = document.querySelectorAll(".gallery-image");
+  const previousButton = document.querySelector(".gallery-prev");
+  const nextButton = document.querySelector(".gallery-next");
+  const currentCounter = document.getElementById("current-image");
+  const totalCounter = document.getElementById("total-images");
+
+  let currentIndex = 0;
+
+  totalCounter.textContent = images.length;
+
+  function showImage(index) {
+    images.forEach((image, i) => {
+      if (i === index) {
+        image.style.display = "block";
+      } else {
+        image.style.display = "none";
+      }
+    });
+
+    currentCounter.textContent = index + 1;
+  }
+
+  previousButton.addEventListener("click", function () {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+      currentIndex = images.length - 1;
+    }
+
+    showImage(currentIndex);
+  });
+
+  nextButton.addEventListener("click", function () {
+    currentIndex++;
+
+    if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+
+    showImage(currentIndex);
+  });
+
+  showImage(currentIndex);
+</script>
+
+</body>
+
+</html>

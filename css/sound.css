@@ -1,0 +1,313 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+body.sound-page {
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   BACK HOME
+======================================== */
+
+.back-home {
+  position: fixed;
+
+  top: 28px;
+  left: 32px;
+
+  z-index: 100;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+.back-home:hover {
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+.sound-layout {
+  width: 100%;
+
+  padding:
+    110px
+    7vw
+    170px;
+}
+
+
+/* ========================================
+   PAGE TITLE
+======================================== */
+
+.page-header {
+  margin-bottom: 120px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 6vw, 82px);
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+/* ========================================
+   PROJECTS CONTAINER
+======================================== */
+
+.sound-projects {
+  width: 100%;
+}
+
+
+/* ========================================
+   PROJECT
+======================================== */
+
+.sound-project {
+  display: block;
+
+  color: #111;
+  text-decoration: none;
+
+  margin-bottom: 150px;
+}
+
+
+/* ========================================
+   PROJECT HEADER
+======================================== */
+
+.sound-project-header {
+  margin-bottom: 24px;
+}
+
+.sound-project h2 {
+  margin:
+    0
+    0
+    8px;
+
+  font-size: clamp(30px, 4vw, 58px);
+  font-weight: 400;
+
+  line-height: 1.02;
+
+  transition:
+    text-shadow 0.45s ease;
+}
+
+.sound-project p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.sound-image {
+  margin: 0;
+
+  overflow: hidden;
+}
+
+.sound-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.sound-project:hover h2 {
+  text-shadow:
+    0 0 4px rgba(19, 169, 106, 0.95),
+    0 0 10px rgba(19, 169, 106, 0.55),
+    0 0 20px rgba(19, 169, 106, 0.25);
+}
+
+.sound-project:hover .sound-image img {
+  transform: scale(1.012);
+
+  filter: contrast(1.03);
+}
+
+
+/* ========================================
+   INDIVIDUAL PROJECT POSITIONS
+======================================== */
+
+
+/* BEMPT */
+
+.bempt {
+  width: 42%;
+  margin-left: 8%;
+}
+
+
+/* RADIO MARIE CHRISTINE */
+
+.radio-marie {
+  width: 40%;
+  margin-left: 48%;
+}
+
+
+/* CHANTS */
+
+.chants {
+  width: 38%;
+  margin-left: 15%;
+}
+
+
+/* BRUITS */
+
+.bruits {
+  width: 42%;
+  margin-left: 40%;
+}
+
+/* ========================================
+   IMAGE PROPORTIONS
+======================================== */
+
+.bempt .sound-image img {
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+}
+
+.radio-marie .sound-image img {
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+}
+
+.chants .sound-image img {
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+}
+
+.bruits .sound-image img {
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  /* BACK */
+
+  .back-home {
+    top: 20px;
+    left: 20px;
+  }
+
+
+  /* MAIN */
+
+  .sound-layout {
+    padding:
+      85px
+      20px
+      110px;
+  }
+
+
+  /* TITLE */
+
+  .page-header {
+    margin-bottom: 80px;
+  }
+
+  .page-header h1 {
+    font-size: 46px;
+  }
+
+
+  /* PROJECT */
+
+  .sound-project {
+    width: 100%;
+
+    margin:
+      0
+      0
+      90px;
+  }
+
+
+  .sound-project h2 {
+    font-size: 34px;
+  }
+
+
+  .sound-project p {
+    font-size: 13px;
+  }
+
+
+  /* IMAGES */
+
+  .bempt .sound-image img,
+  .radio-marie .sound-image img,
+  .chants .sound-image img,
+  .bruits .sound-image img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: auto;
+
+    object-fit: contain;
+  }
+
+}

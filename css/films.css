@@ -1,0 +1,324 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body.films-page {
+  background-color: #9eeb84;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   RETOUR HOME
+======================================== */
+
+.back-home {
+  position: fixed;
+
+  top: 28px;
+  left: 28px;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 14px;
+
+  z-index: 100;
+}
+
+.back-home:hover {
+  opacity: 0.5;
+}
+
+
+/* ========================================
+   CONTENEUR PAGE
+======================================== */
+
+.films-layout {
+  width: 100%;
+
+  padding:
+    90px
+    4vw
+    150px;
+}
+
+
+/* ========================================
+   TITRE FILMS
+======================================== */
+
+.films-header {
+  margin-bottom: 100px;
+}
+
+.films-header h1 {
+  margin: 0;
+
+  font-size: 43px;
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   CHAQUE FILM
+======================================== */
+
+.film-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(420px, 0.95fr)
+    minmax(380px, 1fr);
+
+  gap: clamp(55px, 7vw, 110px);
+
+  align-items: start;
+
+  width: 88%;
+
+  margin-left: 7%;
+  margin-bottom: 150px;
+}
+
+
+/* ========================================
+   COLONNE GAUCHE
+======================================== */
+
+.film-card-left {
+  width: 100%;
+}
+
+
+/* titre + année */
+
+.film-card-heading {
+  margin-bottom: 24px;
+}
+
+.film-card-heading h2 {
+  margin: 0 0 10px;
+
+  font-size: clamp(40px, 4.2vw, 62px);
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+}
+
+.film-meta {
+  margin: 0;
+
+  font-size: clamp(18px, 1.4vw, 21px);
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.film-card-image {
+  width: 88%;
+
+  margin: 0;
+
+  overflow: hidden;
+}
+
+.film-card-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+
+/* effet souris */
+
+.film-card-image:hover img {
+  transform: scale(1.045);
+  filter: contrast(1.04);
+}
+
+
+/* ========================================
+   COLONNE DROITE
+======================================== */
+
+.film-card-info {
+  width: 100%;
+  max-width: 600px;
+
+  /*
+     IMPORTANT :
+     fait commencer le texte à la hauteur
+     du haut de la photo
+  */
+  padding-top: 98px;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.film-description {
+  max-width: 580px;
+
+  margin-bottom: 34px;
+}
+
+.film-description p {
+  margin: 0 0 18px;
+
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.48;
+}
+
+
+/* ========================================
+   MORE INFO
+======================================== */
+
+.film-more {
+  max-width: 580px;
+}
+
+.film-more summary {
+  display: inline-block;
+
+  cursor: pointer;
+  list-style: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  transition:
+    opacity 0.3s ease,
+    text-shadow 0.4s ease;
+}
+
+.film-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.film-more summary:hover {
+  opacity: 0.75;
+
+  text-shadow:
+    0 0 4px rgba(19, 169, 106, 0.8),
+    0 0 9px rgba(19, 169, 106, 0.4);
+}
+
+
+/* ========================================
+   INFOS DÉROULÉES
+======================================== */
+
+.film-details {
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.35);
+}
+
+.film-details-section {
+  margin-bottom: 28px;
+}
+
+.film-details-section h3 {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.film-details-section p {
+  margin: 0 0 16px;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .film-card {
+    display: block;
+
+    width: 100%;
+
+    margin-left: 0;
+    margin-bottom: 110px;
+  }
+
+
+  .film-card-heading h2 {
+    font-size: 38px;
+  }
+
+
+  .film-meta {
+    font-size: 17px;
+  }
+
+
+  .film-card-image {
+    width: 85%;
+  }
+
+
+  .film-card-info {
+    width: 92%;
+
+    max-width: none;
+
+    padding-top: 28px;
+
+    margin-left: 5%;
+  }
+
+
+  .film-description p {
+    font-size: 16px;
+  }
+
+
+  .film-more summary {
+    font-size: 14px;
+  }
+
+}

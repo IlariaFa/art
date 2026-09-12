@@ -1,0 +1,202 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+
+/* ========================================
+   PAGE D'ACCUEIL
+======================================== */
+
+body.home {
+  margin: 0;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   NOM
+======================================== */
+
+.name {
+  position: fixed;
+  left: 18px;
+  top: 2%;
+
+  transform-origin: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 130;
+
+  letter-spacing: 0.12em;
+
+  color: #000000;
+
+  opacity: 0.9;
+
+  white-space: nowrap;
+
+  z-index: 100;
+}
+
+
+/* ========================================
+   ESPACE DU MENU
+======================================== */
+
+.floating-menu {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/* ========================================
+   RUBRIQUES
+======================================== */
+
+.menu-item {
+  position: absolute;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 45px;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: clamp(22px, 3vw, 42px);
+  font-weight: 400;
+
+  isolation: isolate;
+}
+
+
+/* ========================================
+   TEXTE DES RUBRIQUES
+======================================== */
+
+.menu-item span {
+  position: relative;
+
+  z-index: 2;
+
+  transition:
+    text-shadow 0.5s ease,
+    color 0.5s ease;
+}
+
+
+/* ========================================
+   HALO AU SURVOL
+======================================== */
+
+.menu-item:hover span {
+  text-shadow:
+    0 0 4px rgba(19, 169, 106, 0.95),
+    0 0 8px rgba(19, 169, 106, 0.80),
+    0 0 14px rgba(19, 169, 106, 0.55),
+    0 0 22px rgba(19, 169, 106, 0.30),
+    0 0 32px rgba(19, 169, 106, 0.12);
+}
+
+/* ========================================
+   POSITIONS — DESKTOP
+======================================== */
+
+.ongoing {
+  top: 18%;
+  left: 18%;
+}
+
+.drawings {
+  top: 12%;
+  left: 70%;
+}
+
+.films {
+  top: 43%;
+  left: 4%;
+}
+
+.workshops {
+  top: 48%;
+  left: 48%;
+}
+
+.sound {
+  top: 68%;
+  left: 76%;
+}
+
+.writings {
+  top: 82%;
+  left: 7%;
+}
+
+.about {
+  top: 80%;
+  left: 52%;
+}
+
+@media (max-width: 700px) {
+
+  .ongoing {
+    top: 15%;
+    left: 8%;
+  }
+
+  .drawings {
+    top: 25%;
+    left: 48%;
+  }
+
+  .film {
+    top: 39%;
+    left: 7%;
+  }
+
+  .workshops {
+    top: 50%;
+    left: 34%;
+  }
+
+  .sound {
+    top: 62%;
+    left: 57%;
+  }
+
+  .writings {
+    top: 74%;
+    left: 6%;
+  }
+
+  .about {
+    top: 85%;
+    left: 54%;
+  }
+}

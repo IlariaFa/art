@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.drawings-page {
+  background: #9eeb84;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.back-home {
+  position: fixed;
+  top: 28px;
+  left: 32px;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.drawings-layout {
+  min-height: 100vh;
+  padding: 110px 7vw 160px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 85px);
+  font-weight: 400;
+}
+
+.drawing-series {
+  position: relative;
+  min-height: 700px;
+}
+
+.drawing-item {
+  position: absolute;
+}
+
+.drawing-item h2 {
+  margin: 0 0 6px;
+  font-size: clamp(30px, 4vw, 58px);
+  font-weight: 400;
+}
+
+.drawing-item p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.forest {
+  top: 130px;
+  left: 10%;
+}
+
+.animals {
+  top: 310px;
+  left: 57%;
+}
+
+.carnet {
+  top: 520px;
+  left: 25%;
+}
+
+@media (max-width: 700px) {
+
+  .back-home {
+    top: 20px;
+    left: 20px;
+  }
+
+  .drawings-layout {
+    padding: 85px 20px 100px;
+  }
+
+  .page-header h1 {
+    font-size: 46px;
+  }
+
+  .drawing-series {
+    min-height: 600px;
+  }
+
+  .forest {
+    top: 100px;
+    left: 0;
+  }
+
+  .animals {
+    top: 260px;
+    left: 35%;
+  }
+
+  .carnet {
+    top: 430px;
+    left: 10%;
+  }
+}

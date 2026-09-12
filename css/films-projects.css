@@ -1,0 +1,284 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.project-nav {
+  position: fixed;
+
+  top: 28px;
+  left: 32px;
+  right: 32px;
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 100;
+}
+
+.project-nav a {
+  color: #111;
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+.project-nav a:hover {
+  opacity: 0.5;
+}
+
+
+/* ========================================
+   CONTENEUR
+======================================== */
+
+.project-layout {
+  width: 100%;
+
+  padding:
+    120px
+    7vw
+    170px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.project-header {
+  width: 70%;
+
+  margin-left: 6%;
+  margin-bottom: 90px;
+}
+
+.project-header h1 {
+  margin: 0 0 12px;
+
+  font-size: clamp(42px, 7vw, 100px);
+  font-weight: 400;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+.project-meta {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   IMAGE PRINCIPALE
+======================================== */
+
+.project-image {
+  margin: 0;
+}
+
+.project-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.project-image-main {
+  width: 58%;
+
+  margin-left: 28%;
+  margin-bottom: 100px;
+}
+
+
+/* ========================================
+   SECTIONS TEXTE
+======================================== */
+
+.project-section {
+  position: relative;
+}
+
+.project-section h2 {
+  margin: 0 0 15px;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.project-section p {
+  margin: 0 0 16px;
+
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   SYNOPSIS
+======================================== */
+
+.synopsis {
+  width: 40%;
+
+  margin-left: 8%;
+  margin-bottom: 120px;
+}
+
+
+/* ========================================
+   IMAGE SECONDAIRE
+======================================== */
+
+.project-image-secondary {
+  width: 40%;
+
+  margin-left: 52%;
+  margin-bottom: 120px;
+}
+
+
+/* ========================================
+   INFOS TECHNIQUES
+======================================== */
+
+.project-details {
+  width: 28%;
+
+  margin-left: 55%;
+  margin-bottom: 70px;
+}
+
+
+/* ========================================
+   CREDITS
+======================================== */
+
+.credits {
+  width: 35%;
+
+  margin-left: 12%;
+  margin-bottom: 90px;
+}
+
+
+/* ========================================
+   SCREENINGS
+======================================== */
+
+.screenings {
+  width: 35%;
+
+  margin-left: 58%;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .project-nav {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .project-layout {
+    padding:
+      90px
+      20px
+      110px;
+  }
+
+  .project-header {
+    width: 100%;
+
+    margin-left: 0;
+    margin-bottom: 60px;
+  }
+
+  .project-header h1 {
+    font-size: 42px;
+  }
+
+  .project-meta {
+    font-size: 13px;
+  }
+
+  .project-image-main {
+    width: 92%;
+
+    margin-left: 8%;
+    margin-bottom: 70px;
+  }
+
+  .project-section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .synopsis {
+    width: 92%;
+
+    margin-left: 0;
+    margin-bottom: 80px;
+  }
+
+  .project-image-secondary {
+    width: 82%;
+
+    margin-left: auto;
+    margin-bottom: 80px;
+  }
+
+  .project-details {
+    width: 60%;
+
+    margin-left: 35%;
+    margin-bottom: 60px;
+  }
+
+  .credits {
+    width: 90%;
+
+    margin-left: 0;
+    margin-bottom: 70px;
+  }
+
+  .screenings {
+    width: 75%;
+
+    margin-left: 20%;
+  }
+}
