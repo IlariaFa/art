@@ -1,0 +1,335 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   GENERAL
+======================================== */
+
+body.radio-page {
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   BACK LINK
+======================================== */
+
+.back-link {
+  position: fixed;
+
+  top: 28px;
+  left: 32px;
+
+  z-index: 100;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 15px;
+}
+
+.back-link:hover {
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+.radio-layout {
+  width: min(1120px, 84vw);
+
+  margin: 0 auto;
+
+  padding:
+    95px
+    0
+    130px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.radio-header {
+  width: 72%;
+
+  margin-bottom: 90px;
+}
+
+.project-label {
+  margin:
+    0
+    0
+    22px;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.radio-header h1 {
+  margin:
+    0
+    0
+    18px;
+
+  font-size: clamp(46px, 6vw, 82px);
+  font-weight: 400;
+
+  line-height: 0.98;
+}
+
+.project-meta {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.radio-intro {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    minmax(0, 650px);
+
+  gap: 75px;
+
+  width: 82%;
+
+  margin:
+    0
+    auto
+    140px;
+}
+
+
+/* KEYWORDS */
+
+.radio-keywords {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.8;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* INTRO TEXT */
+
+.radio-intro-text {
+  max-width: 650px;
+}
+
+.radio-intro-text p {
+  margin:
+    0
+    0
+    24px;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   REFLECTION
+======================================== */
+
+.radio-reflection {
+  width: 68%;
+
+  margin:
+    0
+    0
+    140px
+    18%;
+}
+
+.section-label {
+  margin:
+    0
+    0
+    34px;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.reflection-text {
+  max-width: 650px;
+}
+
+.reflection-text p {
+  margin:
+    0
+    0
+    24px;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   OPTIONAL IMAGE
+======================================== */
+
+.radio-image {
+  width: 58%;
+
+  margin:
+    0
+    auto
+    130px;
+}
+
+.radio-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.radio-footer {
+  width: 82%;
+
+  margin: 0 auto;
+}
+
+.radio-footer a {
+  color: #111;
+  text-decoration: none;
+
+  font-size: 15px;
+}
+
+.radio-footer a:hover {
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .back-link {
+    top: 20px;
+    left: 20px;
+  }
+
+
+  .radio-layout {
+    width: auto;
+
+    margin: 0;
+
+    padding:
+      90px
+      20px
+      90px;
+  }
+
+
+  /* HEADER */
+
+  .radio-header {
+    width: 100%;
+
+    margin-bottom: 65px;
+  }
+
+  .radio-header h1 {
+    font-size: 48px;
+  }
+
+
+  /* INTRO */
+
+  .radio-intro {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    width: 100%;
+
+    margin-bottom: 95px;
+  }
+
+  .radio-keywords {
+    font-size: 11px;
+  }
+
+  .radio-intro-text p {
+    font-size: 17px;
+  }
+
+
+  /* REFLECTION */
+
+  .radio-reflection {
+    width: 100%;
+
+    margin:
+      0
+      0
+      95px;
+  }
+
+  .reflection-text p {
+    font-size: 17px;
+  }
+
+
+  /* IMAGE */
+
+  .radio-image {
+    width: 100%;
+
+    margin-bottom: 90px;
+  }
+
+
+  /* FOOTER */
+
+  .radio-footer {
+    width: 100%;
+  }
+
+}

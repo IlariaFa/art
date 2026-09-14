@@ -200,3 +200,13 @@ body.home {
     left: 54%;
   }
 }
+@media (max-width: 700px) {
+
+  .menu-item.about {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+}

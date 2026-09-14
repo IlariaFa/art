@@ -1,0 +1,538 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   GENERAL
+======================================== */
+
+body.voice-page {
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   BACK LINK
+======================================== */
+
+.back-link {
+  position: fixed;
+
+  top: 28px;
+  left: 32px;
+
+  z-index: 100;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 15px;
+}
+
+.back-link:hover {
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+.voice-layout {
+  width: min(1180px, 84vw);
+
+  margin: 0 auto;
+
+  padding:
+    95px
+    0
+    140px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.voice-header {
+  width: 78%;
+
+  margin-bottom: 70px;
+}
+
+.project-label {
+  margin:
+    0
+    0
+    18px;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+.voice-header h1 {
+  width: 78%;
+  max-width: 900px;
+
+  margin:
+    0
+    0
+    16px;
+
+  font-size: clamp(34px, 4.2vw, 60px);
+  font-weight: 400;
+
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.project-meta {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.project-intro {
+  width: 72%;
+
+  margin:
+    0
+    auto
+    110px;
+}
+
+.keywords {
+  margin:
+    0
+    0
+    30px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+}
+
+.project-description {
+  width: 66%;
+  max-width: 650px;
+
+  margin-left: 18%;
+}
+
+.project-description p {
+  margin:
+    0
+    0
+    20px;
+
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+
+/* ========================================
+   SECTION LABEL
+======================================== */
+
+.section-label {
+  margin:
+    0
+    0
+    28px;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   RESEARCH + COLLECTIVE SECTIONS
+======================================== */
+
+.research-section,
+.collective-section {
+  width: 100%;
+
+  margin-bottom: 120px;
+}
+
+.research-section > .section-label,
+.collective-section > .section-label {
+  margin-left: 8%;
+}
+
+
+/* ========================================
+   IMAGE ROWS
+======================================== */
+
+.image-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  width: 76%;
+  max-width: 1050px;
+
+  margin:
+    0
+    auto;
+}
+
+.image-row figure {
+  margin: 0;
+}
+
+.image-row img {
+  display: block;
+
+  width: 100%;
+  height: 210px;
+
+  object-fit: cover;
+}
+
+.image-row figcaption {
+  margin-top: 8px;
+
+  font-size: 10px;
+  line-height: 1.3;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   SECTION TEXT
+======================================== */
+
+.section-text {
+  width: 48%;
+  max-width: 650px;
+
+  margin:
+    28px
+    auto
+    0;
+
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+
+/* ========================================
+   CONTEXTS
+======================================== */
+
+.contexts-section {
+  width: 68%;
+
+  margin:
+    0
+    auto
+    110px;
+}
+
+.contexts {
+  margin:
+    0
+    0
+    18px;
+
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.support-note {
+  width: 65%;
+
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+
+/* ========================================
+   ARTISTIC DIRECTION
+======================================== */
+
+.direction-section {
+  width: 62%;
+
+  margin:
+    0
+    auto
+    120px;
+}
+
+.direction-content {
+  max-width: 620px;
+}
+
+.direction-content h2 {
+  margin:
+    0
+    0
+    12px;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.direction-content p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.voice-footer {
+  width: 76%;
+
+  margin: 0 auto;
+}
+
+.voice-footer a {
+  color: #111;
+  text-decoration: none;
+
+  font-size: 15px;
+}
+
+.voice-footer a:hover {
+  opacity: 0.55;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .voice-layout {
+    width: 86vw;
+  }
+
+
+  .voice-header {
+    width: 90%;
+  }
+
+
+  .voice-header h1 {
+    width: 90%;
+  }
+
+
+  .project-intro {
+    width: 86%;
+  }
+
+
+  .project-description {
+    width: 76%;
+
+    margin-left: 10%;
+  }
+
+
+  .image-row {
+    width: 88%;
+  }
+
+
+  .section-text {
+    width: 60%;
+  }
+
+
+  .contexts-section {
+    width: 80%;
+  }
+
+
+  .direction-section {
+    width: 76%;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  /* BACK */
+
+  .back-link {
+    top: 20px;
+    left: 20px;
+  }
+
+
+  /* MAIN */
+
+  .voice-layout {
+    width: auto;
+
+    margin: 0;
+
+    padding:
+      90px
+      20px
+      90px;
+  }
+
+
+  /* HEADER */
+
+  .voice-header {
+    width: 100%;
+
+    margin-bottom: 55px;
+  }
+
+  .voice-header h1 {
+    width: 100%;
+
+    font-size: 38px;
+
+    line-height: 1.02;
+  }
+
+
+  /* INTRO */
+
+  .project-intro {
+    width: 100%;
+
+    margin-bottom: 80px;
+  }
+
+  .keywords {
+    font-size: 10px;
+
+    line-height: 1.5;
+  }
+
+  .project-description {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .project-description p {
+    font-size: 17px;
+  }
+
+
+  /* SECTIONS */
+
+  .research-section,
+  .collective-section {
+    margin-bottom: 90px;
+  }
+
+  .research-section > .section-label,
+  .collective-section > .section-label {
+    margin-left: 0;
+  }
+
+
+  /* IMAGES */
+
+  .image-row {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    gap: 30px;
+  }
+
+  .image-row img {
+    height: auto;
+  }
+
+
+  /* SECTION TEXT */
+
+  .section-text {
+    width: 100%;
+
+    margin-top: 25px;
+
+    font-size: 16px;
+  }
+
+
+  /* CONTEXTS */
+
+  .contexts-section {
+    width: 100%;
+
+    margin-bottom: 85px;
+  }
+
+  .support-note {
+    width: 100%;
+  }
+
+
+  /* DIRECTION */
+
+  .direction-section {
+    width: 100%;
+
+    margin-bottom: 90px;
+  }
+
+
+  /* FOOTER */
+
+  .voice-footer {
+    width: 100%;
+  }
+
+}
