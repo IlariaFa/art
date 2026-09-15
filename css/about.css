@@ -14,11 +14,11 @@ body {
 
 
 /* ========================================
-   PAGE ABOUT
+   PAGE
 ======================================== */
 
 body.about-page {
-  background-color: #9eeb84;
+  background: #9eeb84;
   color: #111;
 
   font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +26,7 @@ body.about-page {
 
 
 /* ========================================
-   LIEN RETOUR
+   BACK HOME
 ======================================== */
 
 .back-home {
@@ -35,28 +35,26 @@ body.about-page {
   top: 28px;
   left: 32px;
 
+  z-index: 100;
+
   color: #111;
   text-decoration: none;
 
   font-size: 15px;
 
-  z-index: 100;
-
   transition: opacity 0.3s ease;
 }
 
 .back-home:hover {
-  opacity: 0.55;
+  opacity: 0.5;
 }
 
 
 /* ========================================
-   CONTENEUR PRINCIPAL
+   MAIN LAYOUT
 ======================================== */
 
 .about-layout {
-  position: relative;
-
   width: 100%;
   min-height: 100vh;
 
@@ -65,29 +63,26 @@ body.about-page {
 
 
 /* ========================================
-   BLOCS DE TEXTE
+   GENERAL TYPOGRAPHY
 ======================================== */
-
-.about-section {
-  position: relative;
-}
 
 .about-section h1,
 .about-section h2 {
-  margin: 0 0 24px;
+  margin: 0 0 34px;
 
   font-size: 15px;
+  line-height: 1;
+
   font-weight: 400;
 
   letter-spacing: 0.08em;
-
   text-transform: uppercase;
 }
 
 .about-section p {
-  margin: 0 0 20px;
+  margin: 0 0 25px;
 
-  font-size: clamp(16px, 1.15vw, 18px);
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -97,35 +92,52 @@ body.about-page {
 ======================================== */
 
 .bio-row {
-  display: flex;
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 680px)
+    minmax(220px, 340px);
+
+  column-gap: clamp(60px, 8vw, 130px);
+
   align-items: center;
-  justify-content: flex-start;
 
-  width: 78%;
+  width: 88%;
+  max-width: 1250px;
 
-  margin-left: 12%;
-  margin-bottom: 150px;
-
-  gap: 35px;
+  margin: 0 auto 170px;
 }
+
+
+/* BIO TEXT */
 
 .bio {
-  width: 55%;
-  max-width: 680px;
+  width: 100%;
 }
 
+.bio p {
+  max-width: 680px;
+
+  font-size: 20px;
+  line-height: 1.48;
+}
+
+
+/* PHOTO */
+
 .about-photo {
-  width: 250px;
+  width: 100%;
+  max-width: 340px;
+
   margin: 0;
-  flex-shrink: 0;
 }
 
 .about-photo img {
   display: block;
+
   width: 100%;
   height: auto;
 }
-
 
 
 /* ========================================
@@ -133,10 +145,16 @@ body.about-page {
 ======================================== */
 
 .practice {
-  width: 48%;
+  width: 52%;
+  max-width: 720px;
 
   margin-left: 6%;
-  margin-bottom: 140px;
+  margin-bottom: 150px;
+}
+
+.practice p {
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 
@@ -145,30 +163,75 @@ body.about-page {
 ======================================== */
 
 .contact {
-  width: 30%;
+  width: 35%;
+  max-width: 430px;
 
   margin-left: auto;
   margin-right: 10%;
 }
 
+.contact h2 {
+  margin-bottom: 20px;
+}
+
 .contact p {
-  margin: 0 0 8px;
+  margin: 0;
 
   font-size: 17px;
 }
 
+
+/* CONTACT LINK */
+
 .contact a {
+  display: inline-block;
+
+  padding-bottom: 3px;
+
   color: #111;
   text-decoration: none;
 
-  transition: text-shadow 0.35s ease;
+  border-bottom: 1px solid #111;
+
+  transition:
+    text-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .contact a:hover {
+  border-color: transparent;
+
   text-shadow:
     0 0 4px rgba(19, 169, 106, 0.95),
     0 0 9px rgba(19, 169, 106, 0.65),
     0 0 18px rgba(19, 169, 106, 0.30);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+  .bio-row {
+    width: 92%;
+
+    grid-template-columns:
+      minmax(0, 1.4fr)
+      minmax(200px, 0.7fr);
+
+    column-gap: 50px;
+  }
+
+  .bio p {
+    font-size: 18px;
+  }
+
+  .practice {
+    width: 65%;
+  }
+
 }
 
 
@@ -178,21 +241,43 @@ body.about-page {
 
 @media (max-width: 700px) {
 
+  /* BACK */
+
   .back-home {
+    position: absolute;
+
     top: 20px;
     left: 20px;
+
+    font-size: 14px;
   }
 
+
+  /* MAIN */
 
   .about-layout {
-    padding:
-      90px
-      20px
-      100px;
+    padding: 85px 20px 90px;
   }
 
 
-  /* BIO */
+  /* GENERAL */
+
+  .about-section h1,
+  .about-section h2 {
+    margin-bottom: 25px;
+
+    font-size: 13px;
+  }
+
+  .about-section p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+
+  /* ========================================
+     BIO
+  ======================================== */
 
   .bio-row {
     display: flex;
@@ -202,61 +287,88 @@ body.about-page {
 
     width: 100%;
 
-    margin-left: 0;
-    margin-bottom: 100px;
+    margin: 0 0 100px;
 
-    gap: 35px;
+    gap: 30px;
   }
-
 
   .bio {
-    width: 88%;
-
-    margin-left: 0;
+    width: 100%;
   }
 
-
   .bio p {
-    font-size: 19px;
+    max-width: none;
+
+    font-size: 18px;
+    line-height: 1.5;
   }
 
 
   /* PHOTO */
 
   .about-photo {
-    width: 70%;
+    width: 62%;
+    max-width: 280px;
+
+    margin-left: auto;
+    margin-right: 5%;
+  }
+
+
+  /* ========================================
+     PRACTICE
+  ======================================== */
+
+  .practice {
+    width: 100%;
+    max-width: none;
+
+    margin-left: 0;
+    margin-bottom: 100px;
+  }
+
+  .practice p {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+
+  /* ========================================
+     CONTACT
+  ======================================== */
+
+  .contact {
+    width: 100%;
+    max-width: none;
 
     margin: 0;
   }
 
-
-  /* PRACTICE */
-
-  .practice {
-    width: 88%;
-
-    margin-left: 0;
-    margin-bottom: 90px;
-  }
-
-
-  .practice p {
-    font-size: 19px;
-  }
-
-
-  /* CONTACT */
-
-  .contact {
-    width: 70%;
-
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-
   .contact p {
-    font-size: 19px;
+    font-size: 17px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+
+  .about-layout {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .bio p {
+    font-size: 17px;
+  }
+
+  .about-photo {
+    width: 70%;
+    margin-right: 0;
   }
 
 }

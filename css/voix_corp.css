@@ -536,3 +536,38 @@ body.voice-page {
   }
 
 }
+/* ========================================
+   EXTERNAL PROJECT LINK
+======================================== */
+
+.arts_et_publics-link {
+  display: inline-block;
+
+  margin-top: 22px;
+  padding-bottom: 4px;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  border-bottom: 1.5px solid #111;
+
+  transition:
+    text-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.arts_et_publics-link::after {
+  content: " ↗";
+}
+
+.arts_et_publics-link:hover {
+  border-color: transparent;
+
+  text-shadow:
+    0 0 4px rgba(19, 169, 106, 0.95),
+    0 0 9px rgba(19, 169, 106, 0.65),
+    0 0 18px rgba(19, 169, 106, 0.30);
+}

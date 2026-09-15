@@ -10,44 +10,125 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 
+
 <body class="home">
+
+  <!-- ========================================
+       NOM
+  ========================================= -->
 
   <div class="name">
     ILARIA FANTINI
   </div>
 
+
+  <!-- ========================================
+       MENU
+  ========================================= -->
+
   <nav class="floating-menu">
 
-    <a class="menu-item about" href="about.html">
+    <!-- ABOUT -->
+
+    <a
+      class="menu-item about"
+      href="about.html"
+      data-preview="images/about.png"
+    >
       <span>About</span>
     </a>
 
-    <a class="menu-item drawings" href="./drawings.html">
-  <span>Drawings</span>
-</a>
 
-<a class="menu-item sound" href="./sound/sound.html">
-  <span>Sound</span>
-</a>
+    <!-- DRAWINGS -->
 
-<a class="menu-item workshops" href="./workshops/workshops.html">
-  <span>Workshops</span>
-</a>
+    <a
+      class="menu-item drawings"
+      href="drawings.html"
+      data-preview="images/lac_1.png"
+    >
+      <span>Drawings</span>
+    </a>
 
-<a class="menu-item writings" href="./writings-editions/writings-editions.html">
-  <span>Writings/Editions</span>
-</a>
 
-<a class="menu-item ongoing" href="ongoing/ongoing.html">
-      <span>Ongoing</span>
- </a>
+    <!-- SOUND -->
 
- <a class="menu-item films" href="films/films.html">
+    <a
+      class="menu-item sound"
+      href="sound/sound.html"
+      data-preview="images/corp_voix_1.jpeg"
+    >
+      <span>Sound</span>
+    </a>
+
+
+    <!-- WORKSHOPS -->
+
+    <a
+      class="menu-item workshops"
+      href="workshops/workshops.html"
+      data-preview="images/arduino_1.png"
+    >
+      <span>Workshops</span>
+    </a>
+
+
+    <!-- WRITINGS / EDITIONS -->
+
+    <a
+      class="menu-item writings"
+      href="writings-editions/writings-editions.html"
+      data-preview="images/otherkin_1.png"
+    >
+      <span>Writings / Editions</span>
+    </a>
+
+
+    <!-- ONGOING RESEARCH -->
+
+    <a
+      class="menu-item ongoing"
+      href="ongoing/ongoing.html"
+      data-preview="images/zone_blanche.png"
+    >
+      <span>Ongoing Research</span>
+    </a>
+
+
+    <!-- FILMS -->
+
+    <a
+      class="menu-item films"
+      href="films/films.html"
+      data-preview="images/une_marche.png"
+    >
       <span>Films</span>
-</a>
+    </a>
 
   </nav>
 
-</body>
-</html>
 
+  <!-- ========================================
+       IMAGE QUI APPARAÎT AU HOVER
+  ========================================= -->
+
+  <div class="index-preview" aria-hidden="true">
+    <img src="" alt="">
+  </div>
+
+
+  <!-- ========================================
+       CURSEUR DIFFUS
+  ========================================= -->
+
+  <div class="soft-cursor" aria-hidden="true"></div>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
