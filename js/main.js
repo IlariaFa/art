@@ -145,3 +145,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+/*.  message pour le work in progress site web */ 
+
+const siteNote = document.querySelector(".site-note");
+const siteNoteClose = document.querySelector(".site-note-close");
+
+if (siteNote && siteNoteClose) {
+  siteNoteClose.addEventListener("click", () => {
+    siteNote.classList.add("is-hidden");
+  });
+}
+
+/*-------------------------------------------------*/
