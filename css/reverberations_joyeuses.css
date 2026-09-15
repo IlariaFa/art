@@ -1,0 +1,572 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+body.reverberations-page {
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   BACK
+======================================== */
+
+.back-link {
+  position: fixed;
+
+  top: 28px;
+  left: 32px;
+
+  z-index: 100;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: opacity 0.3s ease;
+}
+
+.back-link:hover {
+  opacity: 0.5;
+}
+
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+.reverberations-layout {
+  width: 100%;
+
+  padding:
+    120px
+    7vw
+    100px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.project-header {
+  width: 86%;
+
+  margin:
+    0 auto
+    140px;
+}
+
+
+.project-label {
+  margin:
+    0 0
+    38px;
+
+  font-size: 13px;
+
+  letter-spacing: 0.08em;
+}
+
+
+.project-header h1 {
+  margin: 0;
+
+  max-width: 850px;
+
+  font-size:
+    clamp(48px, 7vw, 105px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.035em;
+}
+
+
+.project-meta {
+  margin:
+    32px 0
+    0;
+
+  font-size: 15px;
+}
+
+
+/* ========================================
+   INTRODUCTION
+======================================== */
+
+.project-intro {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    2fr;
+
+  gap: 80px;
+
+  width: 72%;
+
+  margin:
+    0 auto
+    150px;
+}
+
+
+/* KEYWORDS */
+
+.project-fields p {
+  margin:
+    0 0
+    8px;
+
+  font-size: 12px;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* INTRO TEXT */
+
+.intro-text {
+  max-width: 650px;
+}
+
+
+.intro-text p {
+  margin:
+    0 0
+    24px;
+
+  font-size:
+    clamp(17px, 1.4vw, 20px);
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   IMAGES
+======================================== */
+
+.image-section {
+  width: 100%;
+
+  margin-bottom: 150px;
+}
+
+
+.image-section figure {
+  margin: 0;
+}
+
+
+.image-section img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+.image-section figcaption {
+  margin-top: 10px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* ========================================
+   PREMIÈRE IMAGE
+======================================== */
+
+.image-section-one {
+  width: 62%;
+
+  margin-left: 8%;
+  margin-right: auto;
+
+  margin-bottom: 150px;
+}
+
+
+/* ========================================
+   DEUXIÈME IMAGE
+======================================== */
+
+.image-section-two {
+  width: 52%;
+
+  margin-left: auto;
+  margin-right: 8%;
+
+  margin-bottom: 150px;
+}
+
+
+/* ========================================
+   TEXT SECTIONS
+======================================== */
+
+.text-section {
+  width: 68%;
+
+  margin:
+    0 auto
+    150px;
+}
+
+
+.section-label {
+  margin:
+    0 0
+    45px;
+
+  font-size: 13px;
+
+  letter-spacing: 0.08em;
+}
+
+
+.section-text {
+  width: 62%;
+
+  margin-left: auto;
+}
+
+
+.section-text p {
+  margin:
+    0 0
+    22px;
+
+  font-size:
+    clamp(16px, 1.25vw, 19px);
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   WORKSHOP
+======================================== */
+
+.workshop-section {
+  margin-left: 14%;
+}
+
+
+/* ========================================
+   PERFORMANCE
+======================================== */
+
+.performance-section {
+  margin-right: 10%;
+}
+
+
+/* ========================================
+   CONTEXT
+======================================== */
+
+.context-section {
+  width: 72%;
+
+  margin:
+    0 auto
+    150px;
+}
+
+
+.context-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 50px;
+}
+
+
+.context-grid p {
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.45;
+}
+
+
+.context-grid .small-label {
+  margin-bottom: 12px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ========================================
+   CREDITS
+======================================== */
+
+.credits-section {
+  width: 60%;
+
+  margin:
+    0 0
+    160px
+    20%;
+}
+
+
+.credits-content {
+  width: 65%;
+
+  margin-left: auto;
+}
+
+
+.credits-content h2 {
+  margin:
+    0 0
+    18px;
+
+  font-size: 24px;
+
+  font-weight: 400;
+}
+
+
+.credits-content p {
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.project-footer {
+  width: 86%;
+
+  margin: 0 auto;
+}
+
+
+.project-footer a {
+  color: #111;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: text-shadow 0.3s ease;
+}
+
+
+.project-footer a:hover {
+  text-shadow:
+    0 0 3px rgba(19, 169, 106, 0.75),
+    0 0 7px rgba(19, 169, 106, 0.45),
+    0 0 14px rgba(19, 169, 106, 0.22);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  /* BACK */
+
+  .back-link {
+    top: 20px;
+    left: 20px;
+  }
+
+
+  /* MAIN */
+
+  .reverberations-layout {
+    padding:
+      90px
+      20px
+      80px;
+  }
+
+
+  /* HEADER */
+
+  .project-header {
+    width: 100%;
+
+    margin-bottom: 90px;
+  }
+
+
+  .project-label {
+    margin-bottom: 25px;
+
+    font-size: 11px;
+  }
+
+
+  .project-header h1 {
+    font-size: clamp(42px, 14vw, 65px);
+
+    line-height: 0.94;
+  }
+
+
+  .project-meta {
+    margin-top: 25px;
+  }
+
+
+  /* INTRO */
+
+  .project-intro {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 90px;
+  }
+
+
+  .project-fields {
+    margin-bottom: 45px;
+  }
+
+
+  .project-fields p {
+    font-size: 11px;
+  }
+
+
+  .intro-text {
+    width: 92%;
+  }
+
+
+  .intro-text p {
+    font-size: 18px;
+  }
+
+
+  /* IMAGES */
+
+  .image-section-one,
+  .image-section-two {
+    width: 88%;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    margin-bottom: 90px;
+  }
+
+
+  .image-section-two {
+    margin-left: auto;
+  }
+
+
+  /* TEXT */
+
+  .text-section {
+    width: 100%;
+
+    margin:
+      0 0
+      90px;
+  }
+
+
+  .section-label {
+    margin-bottom: 35px;
+  }
+
+
+  .section-text {
+    width: 88%;
+
+    margin-left: 0;
+  }
+
+
+  .section-text p {
+    font-size: 18px;
+  }
+
+
+  /* CONTEXT */
+
+  .context-section {
+    width: 100%;
+
+    margin-bottom: 100px;
+  }
+
+
+  .context-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  /* CREDITS */
+
+  .credits-section {
+    width: 100%;
+
+    margin:
+      0 0
+      110px;
+  }
+
+
+  .credits-content {
+    width: 88%;
+
+    margin-left: 0;
+  }
+
+
+  /* FOOTER */
+
+  .project-footer {
+    width: 100%;
+  }
+
+}
