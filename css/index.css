@@ -10,7 +10,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-
   width: 100%;
   min-height: 100%;
 }
@@ -47,7 +46,6 @@ body.home {
 
   margin: 0;
 
-  font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(32px, 4vw, 58px);
   font-weight: 400;
   line-height: 1;
@@ -96,12 +94,6 @@ body.home {
 
   white-space: nowrap;
 
-  /*
-    Permet de contrôler correctement
-    les différents niveaux :
-    texte / image / curseur.
-  */
-
   isolation: isolate;
 }
 
@@ -124,19 +116,20 @@ body.home {
 
 
 /* ========================================
-   HALO DES MOTS
+   HALO AU SURVOL
 ======================================== */
 
 /*
-   Halo volontairement plus discret
-   que dans la version précédente.
+   Halo assez léger :
+   présent, mais sans devenir l'élément
+   principal de la page.
 */
 
 .menu-item:hover span {
   text-shadow:
-    0 0 3px rgba(19, 169, 106, 0.75),
-    0 0 7px rgba(19, 169, 106, 0.45),
-    0 0 14px rgba(19, 169, 106, 0.22);
+    0 0 3px rgba(19, 169, 106, 0.65),
+    0 0 7px rgba(19, 169, 106, 0.38),
+    0 0 13px rgba(19, 169, 106, 0.18);
 }
 
 
@@ -144,35 +137,73 @@ body.home {
    POSITIONS — DESKTOP
 ======================================== */
 
+/*
+   Hiérarchie :
+
+   Ongoing Research
+   Sound
+   Films
+
+   puis :
+
+   Workshops
+   Writings / Editions
+   Drawings
+
+   About reste plus bas.
+*/
+
+
+/* recherche actuelle */
+
 .ongoing {
   top: 18%;
   left: 18%;
 }
 
-.drawings {
+
+/* sound prend l'ancienne position forte
+   de Drawings */
+
+.sound {
   top: 12%;
   left: 70%;
 }
 
+
+/* films reste très visible à gauche */
+
 .films {
-  top: 43%;
+  top: 42%;
   left: 4%;
 }
 
+
+/* workshops reste au centre */
+
 .workshops {
-  top: 48%;
+  top: 47%;
   left: 48%;
 }
 
-.sound {
-  top: 68%;
-  left: 76%;
+
+/* drawings devient plus périphérique */
+
+.drawings {
+  top: 66%;
+  left: 75%;
 }
 
+
+/* writings / editions */
+
 .writings {
-  top: 82%;
+  top: 80%;
   left: 7%;
 }
+
+
+/* about */
 
 .about {
   top: 80%;
@@ -185,15 +216,16 @@ body.home {
 ======================================== */
 
 /*
-   La flèche native disparaît uniquement
-   sur ordinateur avec une vraie souris.
+   Sur ordinateur uniquement :
+   disparition de la flèche native.
 */
 
 @media (pointer: fine) {
 
   body.home,
   body.home *,
-  body.home a {
+  body.home a,
+  body.home button {
     cursor: none !important;
   }
 
@@ -201,16 +233,8 @@ body.home {
 
 
 /* ========================================
-   PETIT POINT VERT
+   PETIT CURSEUR VERT
 ======================================== */
-
-/*
-   Le curseur devient un tout petit point
-   vert foncé.
-
-   Pas de blur.
-   Pas de gros halo.
-*/
 
 .soft-cursor {
   position: fixed;
@@ -233,32 +257,30 @@ body.home {
 
   opacity: 0;
 
+  /*
+     Aucun blur :
+     le point reste précis et discret.
+  */
+
   filter: none;
 
   transition:
-    width 0.18s ease,
-    height 0.18s ease,
+    width 0.16s ease,
+    height 0.16s ease,
     opacity 0.15s ease;
 }
 
 
-/* Curseur visible */
+/* visible lorsque la souris entre dans la page */
 
 body.cursor-visible .soft-cursor {
-  opacity: 0.9;
+  opacity: 0.88;
 }
 
 
 /* ========================================
-   CURSEUR AU HOVER
+   CURSEUR SUR UNE RUBRIQUE
 ======================================== */
-
-/*
-   Il grandit à peine.
-
-   Le vrai effet visuel reste
-   le halo du mot.
-*/
 
 .soft-cursor.is-hovering {
   width: 11px;
@@ -283,12 +305,12 @@ body.cursor-visible .soft-cursor {
 ======================================== */
 
 /*
-   Petite apparition d'image lorsque
-   l'on survole une rubrique.
+   L'image apparaît près de la rubrique,
+   mais pas collée au mot.
 
-   Elle est volontairement assez éloignée
-   du curseur pour ne pas ressembler
-   à un tooltip.
+   Elle doit ressembler à une apparition
+   dans l'espace plutôt qu'à une vignette
+   de menu.
 */
 
 .index-preview {
@@ -297,39 +319,36 @@ body.cursor-visible .soft-cursor {
   top: 0;
   left: 0;
 
-  width: 195px;
-  height: 130px;
+  width: 205px;
+  height: 137px;
 
   overflow: hidden;
 
   pointer-events: none;
-
-  /*
-     Derrière les textes,
-     mais au-dessus du fond.
-  */
 
   z-index: 20;
 
   opacity: 0;
 
   /*
-     L'image apparaît plus loin
-     du curseur.
+     Distance entre curseur et image.
+
+     Pour rapprocher encore l'image :
+     diminue 28px et 20px.
   */
 
   transform:
-    translate(45px, 30px)
+    translate(28px, 20px)
     scale(0.96);
 
   transition:
     opacity 0.28s ease,
-    transform 0.38s ease;
+    transform 0.35s ease;
 }
 
 
 /* ========================================
-   IMAGE DANS LE PREVIEW
+   IMAGE DU PREVIEW
 ======================================== */
 
 .index-preview img {
@@ -341,28 +360,99 @@ body.cursor-visible .soft-cursor {
   object-fit: cover;
 
   /*
-     Un peu transparente,
-     mais pas délavée.
+     Légèrement transparente,
+     sans devenir fade.
   */
 
-  opacity: 0.82;
+  opacity: 0.86;
 
   filter:
-    saturate(0.9)
-    contrast(1.03);
+    saturate(0.95)
+    contrast(1.04);
 }
 
 
 /* ========================================
-   APPARITION DE L'IMAGE
+   IMAGE VISIBLE
 ======================================== */
 
 .index-preview.is-visible {
   opacity: 1;
 
   transform:
-    translate(45px, 30px)
+    translate(28px, 20px)
     scale(1);
+}
+
+
+/* ========================================
+   SITE IN PROGRESS NOTE
+======================================== */
+
+.site-note {
+  position: fixed;
+
+  right: 28px;
+  bottom: 26px;
+
+  width: 245px;
+
+  padding: 18px 35px 18px 18px;
+
+  background: rgba(255, 255, 255, 0.22);
+
+  border: 1px solid rgba(0, 0, 0, 0.18);
+
+  z-index: 500;
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
+.site-note p {
+  margin: 0;
+}
+
+
+.site-note strong {
+  font-weight: 500;
+}
+
+
+/* ========================================
+   CROIX DE LA NOTE
+======================================== */
+
+.site-note-close {
+  position: absolute;
+
+  top: 7px;
+  right: 9px;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* disparition de la note */
+
+.site-note.is-hidden {
+  display: none;
 }
 
 
@@ -420,50 +510,68 @@ body.cursor-visible .soft-cursor {
 
   .ongoing {
     top: 15%;
-    left: 8%;
-  }
-
-  .drawings {
-    top: 25%;
-    left: 48%;
-  }
-
-  .films {
-    top: 38%;
     left: 7%;
   }
 
-  .workshops {
-    top: 49%;
-    left: 34%;
-  }
 
   .sound {
-    top: 61%;
+    top: 26%;
     left: 55%;
   }
 
-  .writings {
-    top: 73%;
-    left: 5%;
+
+  .films {
+    top: 38%;
+    left: 6%;
   }
+
+
+  .workshops {
+    top: 49%;
+    left: 32%;
+  }
+
+
+  .drawings {
+    top: 61%;
+    left: 53%;
+  }
+
+
+  .writings {
+    top: 72%;
+    left: 4%;
+  }
+
 
   .about {
     top: 84%;
     left: 50%;
-
-    display: inline-flex;
-
-    visibility: visible;
-
-    opacity: 1;
-
-    pointer-events: auto;
   }
 
 
   /* ----------------------------------------
-     PAS DE CURSEUR / IMAGE SUR MOBILE
+     NOTE
+  ----------------------------------------- */
+
+  .site-note {
+    right: 14px;
+    bottom: 14px;
+
+    width: min(220px, calc(100vw - 28px));
+
+    padding:
+      14px
+      30px
+      14px
+      14px;
+
+    font-size: 11px;
+  }
+
+
+  /* ----------------------------------------
+     PAS DE CURSEUR / PREVIEW SUR MOBILE
   ----------------------------------------- */
 
   .soft-cursor,
@@ -480,12 +588,6 @@ body.cursor-visible .soft-cursor {
 
 @media (pointer: coarse) {
 
-  /*
-     On conserve le curseur normal du
-     navigateur et on désactive les effets
-     qui nécessitent un hover.
-  */
-
   .soft-cursor,
   .index-preview {
     display: none;
@@ -501,6 +603,7 @@ body.cursor-visible .soft-cursor {
 @media (max-width: 430px) {
 
   .name {
+    top: 16px;
     left: 14px;
 
     font-size: 27px;
@@ -514,112 +617,58 @@ body.cursor-visible .soft-cursor {
   }
 
 
-  /* POSITIONS */
+  /* ----------------------------------------
+     POSITIONS
+  ----------------------------------------- */
 
   .ongoing {
     top: 15%;
     left: 3%;
   }
 
-  .drawings {
-    top: 25%;
-    left: 43%;
+
+  .sound {
+    top: 26%;
+    left: 50%;
   }
+
 
   .films {
     top: 38%;
     left: 3%;
   }
 
+
   .workshops {
     top: 49%;
-    left: 25%;
+    left: 24%;
   }
 
-  .sound {
+
+  .drawings {
     top: 61%;
-    left: 52%;
-  }
-
-  .writings {
-    top: 73%;
-    left: 2%;
-  }
-
-  .about {
-    top: 84%;
     left: 48%;
   }
 
-}
+
+  .writings {
+    top: 72%;
+    left: 2%;
+  }
 
 
-
-/* ========================================
-   SITE IN PROGRESS NOTE
-======================================== */
-
-.site-note {
-  position: fixed;
-
-  right: 28px;
-  bottom: 26px;
-
-  width: 245px;
-
-  padding: 18px 35px 18px 18px;
-
-  background: rgba(255, 255, 255, 0.22);
-
-  border: 1px solid rgba(0, 0, 0, 0.18);
-
-  z-index: 500;
-
-  font-size: 12px;
-  line-height: 1.45;
-
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
+  .about {
+    top: 84%;
+    left: 46%;
+  }
 
 
-.site-note p {
-  margin: 0;
-}
+  /* note légèrement plus petite */
 
+  .site-note {
+    width: 200px;
 
-.site-note strong {
-  font-weight: 500;
-}
+    font-size: 10.5px;
+  }
 
-
-/* CROIX */
-
-.site-note-close {
-  position: absolute;
-
-  top: 7px;
-  right: 9px;
-
-  padding: 0;
-
-  border: 0;
-  background: transparent;
-
-  color: #111;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  font-weight: 400;
-
-  line-height: 1;
-
-  cursor: pointer;
-}
-
-
-/* disparition */
-
-.site-note.is-hidden {
-  display: none;
 }
