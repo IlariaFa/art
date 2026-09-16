@@ -1,0 +1,1078 @@
+/* =========================================================
+   RADIO / VOICE / MOVEMENT
+   PAUL SIVADON — CHU BRUGMANN
+========================================================= */
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+figure,
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+body.brugmann-page {
+  background-color: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* ========================================
+   BACK
+======================================== */
+
+.back-link {
+  position: fixed;
+
+  top: 25px;
+  left: 30px;
+
+  z-index: 100;
+
+  font-size: 14px;
+
+  transition: opacity 0.25s ease;
+}
+
+.back-link:hover {
+  opacity: 0.5;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+.project-layout {
+  width: min(1180px, 86vw);
+
+  margin: 0 auto;
+
+  padding: 100px 0 80px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.project-header {
+  margin-bottom: 75px;
+}
+
+.project-label {
+  margin-bottom: 16px;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.project-header h1 {
+  max-width: 800px;
+
+  margin-bottom: 24px;
+
+  font-size: clamp(54px, 6vw, 84px);
+  font-weight: 400;
+  line-height: 0.9;
+
+  letter-spacing: -0.035em;
+}
+
+.project-meta {
+  margin-bottom: 0;
+
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   INTRODUCTION
+======================================== */
+
+.project-intro {
+  display: grid;
+
+  grid-template-columns:
+    130px
+    minmax(320px, 440px);
+
+  gap: 75px;
+
+  align-items: start;
+
+  margin-bottom: 85px;
+}
+
+
+/* KEYWORDS */
+
+.project-fields p {
+  margin: 0 0 9px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+/* TEXT */
+
+.intro-text {
+  max-width: 440px;
+}
+
+.intro-text p {
+  margin: 0 0 18px;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   LABELS
+======================================== */
+
+.section-label {
+  margin: 0 0 18px;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+.small-label {
+  margin: 0 0 9px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   CAPTIONS
+======================================== */
+
+figcaption {
+  margin-top: 8px;
+
+  font-size: 9px;
+  line-height: 1.3;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   OPENING IMAGE
+======================================== */
+
+.opening-image-section {
+  width: 100%;
+
+  margin-bottom: 70px;
+}
+
+.opening-image {
+  width: 60%;
+
+  margin-left: 20%;
+}
+
+.opening-image img {
+  width: 100%;
+  height: auto;
+
+  max-height: 560px;
+
+  object-fit: contain;
+}
+
+
+/* ========================================
+   WORKSHOP
+======================================== */
+
+.workshop-section {
+  display: grid;
+
+  grid-template-columns:
+    150px
+    minmax(300px, 420px);
+
+  gap: 55px;
+
+  width: 72%;
+
+  margin:
+    0
+    0
+    95px
+    8%;
+}
+
+.workshop-text p {
+  margin: 0 0 17px;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   TWO IMAGES
+======================================== */
+
+/*
+   IMPORTANT:
+
+   Les deux colonnes sont exactement
+   de la même largeur.
+*/
+
+.image-pair-section {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+
+  width: 94%;
+
+  margin:
+    0
+    auto
+    110px;
+
+  align-items: start;
+}
+
+.image-pair-section figure {
+  width: 100%;
+
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* ========================================
+   IDENTICAL IMAGE FRAMES
+======================================== */
+
+/*
+   C'est ce bloc qui garantit que
+   radio_2 et radio_3 auront exactement
+   la même taille visuelle.
+*/
+
+.image-frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ========================================
+   INDIVIDUAL CROPPING
+======================================== */
+
+/*
+   Si radio_2 est mal cadrée :
+   modifie simplement le deuxième nombre.
+
+   20% = montre davantage le haut
+   50% = centre
+   80% = montre davantage le bas
+*/
+
+.image-pair-left img {
+  object-position: center 35%;
+}
+
+
+/*
+   Même principe pour radio_3.
+*/
+
+.image-pair-right img {
+  object-position: center 35%;
+}
+
+
+/* ========================================
+   NARRATION
+======================================== */
+
+.narration-section {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    minmax(320px, 450px);
+
+  gap: 55px;
+
+  width: 76%;
+
+  margin:
+    0
+    0
+    120px
+    17%;
+}
+
+.narration-text p {
+  margin: 0 0 17px;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   LISTEN
+======================================== */
+
+.listen-section {
+  width: 90%;
+
+  margin:
+    0
+    auto
+    120px;
+}
+
+
+/* ========================================
+   LISTEN HEADING
+======================================== */
+
+.listen-heading {
+  display: grid;
+
+  grid-template-columns:
+    150px
+    minmax(250px, 360px)
+    minmax(200px, 300px);
+
+  gap: 45px;
+
+  align-items: end;
+
+  margin-bottom: 45px;
+}
+
+.listen-heading .section-label {
+  margin-bottom: 5px;
+}
+
+.listen-heading h2 {
+  margin: 0;
+
+  font-size: clamp(32px, 3vw, 46px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.listen-heading > p:last-child {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* ========================================
+   SOUNDCLOUD LIST
+======================================== */
+
+.soundcloud-list {
+  width: 100%;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.55);
+}
+
+
+/* ========================================
+   RECORDING
+======================================== */
+
+.recording {
+  display: grid;
+
+  grid-template-columns:
+    260px
+    minmax(0, 1fr);
+
+  gap: 35px;
+
+  align-items: center;
+
+  padding: 25px 0;
+
+  border-bottom: 1px solid rgba(17, 17, 17, 0.55);
+}
+
+
+/* ========================================
+   RECORDING HEADER
+======================================== */
+
+.recording-header {
+  display: grid;
+
+  grid-template-columns:
+    32px
+    1fr;
+
+  gap: 15px;
+
+  align-items: start;
+}
+
+.recording-number {
+  padding-top: 2px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+.recording-title {
+  margin: 0 0 5px;
+
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.recording-source {
+  margin: 0;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  opacity: 0.65;
+}
+
+
+/* ========================================
+   SOUNDCLOUD PLAYER
+======================================== */
+
+/*
+   Le lecteur a maintenant toute
+   la place nécessaire.
+
+   Plus de petit iframe écrasé.
+*/
+
+.soundcloud-player {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.soundcloud-player iframe {
+  display: block;
+
+  width: 100%;
+  height: 120px;
+
+  border: 0;
+}
+
+
+/* ========================================
+   CONTEXT
+======================================== */
+
+.context-section {
+  width: 74%;
+
+  margin:
+    0
+    0
+    95px
+    8%;
+}
+
+.context-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.3fr
+    0.8fr
+    1.2fr;
+
+  gap: 45px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.5);
+}
+
+.context-grid p {
+  margin-bottom: 0;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* ========================================
+   COLLABORATION
+======================================== */
+
+.collaboration-section {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    minmax(300px, 430px);
+
+  gap: 55px;
+
+  width: 70%;
+
+  margin:
+    0
+    0
+    90px
+    22%;
+}
+
+.collaboration-text p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   CREDITS
+======================================== */
+
+.credits-section {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    minmax(300px, 430px);
+
+  gap: 55px;
+
+  width: 70%;
+
+  margin:
+    0
+    0
+    100px
+    22%;
+}
+
+.credits-content h2 {
+  margin: 0 0 13px;
+
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.credits-content p {
+  max-width: 350px;
+
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.project-footer {
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.5);
+}
+
+.project-footer a {
+  font-size: 13px;
+
+  transition: opacity 0.25s ease;
+}
+
+.project-footer a:hover {
+  opacity: 0.5;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+  .project-layout {
+    width: 86vw;
+  }
+
+
+  .project-intro {
+    grid-template-columns:
+      110px
+      minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+
+  .opening-image {
+    width: 72%;
+
+    margin-left: 14%;
+  }
+
+
+  .workshop-section {
+    width: 84%;
+
+    margin-left: 4%;
+  }
+
+
+  .narration-section {
+    width: 84%;
+
+    margin-left: 10%;
+  }
+
+
+  .listen-section {
+    width: 100%;
+  }
+
+
+  .listen-heading {
+    grid-template-columns:
+      110px
+      1fr;
+  }
+
+
+  .listen-heading > p:last-child {
+    grid-column: 2;
+  }
+
+
+  .recording {
+    grid-template-columns:
+      220px
+      minmax(0, 1fr);
+  }
+
+
+  .context-section {
+    width: 90%;
+
+    margin-left: 4%;
+  }
+
+
+  .collaboration-section,
+  .credits-section {
+    width: 82%;
+
+    margin-left: 10%;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  /* BACK */
+
+  .back-link {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+  }
+
+
+  /* MAIN */
+
+  .project-layout {
+    width: auto;
+
+    margin: 0;
+
+    padding:
+      85px
+      20px
+      55px;
+  }
+
+
+  /* HEADER */
+
+  .project-header {
+    margin-bottom: 55px;
+  }
+
+  .project-header h1 {
+    font-size: clamp(43px, 13vw, 62px);
+
+    line-height: 0.93;
+  }
+
+
+  /* INTRO */
+
+  .project-intro {
+    display: block;
+
+    margin-bottom: 60px;
+  }
+
+  .project-fields {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px 15px;
+
+    margin-bottom: 30px;
+  }
+
+  .project-fields p {
+    margin: 0;
+  }
+
+  .intro-text {
+    width: 94%;
+  }
+
+
+  /* OPENING IMAGE */
+
+  .opening-image-section {
+    margin-bottom: 60px;
+  }
+
+  .opening-image {
+    width: 94%;
+
+    margin-left: 0;
+  }
+
+  .opening-image img {
+    height: auto;
+
+    object-fit: contain;
+  }
+
+
+  /* WORKSHOP */
+
+  .workshop-section {
+    display: block;
+
+    width: 94%;
+
+    margin:
+      0
+      0
+      70px;
+  }
+
+  .workshop-section .section-label {
+    margin-bottom: 25px;
+  }
+
+
+  /* ========================================
+     TWO IMAGES — MOBILE
+  ======================================== */
+
+  .image-pair-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin-bottom: 80px;
+  }
+
+
+  /*
+     Même sur mobile les deux images
+     restent exactement identiques.
+  */
+
+  .image-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  .image-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  /* NARRATION */
+
+  .narration-section {
+    display: block;
+
+    width: 94%;
+
+    margin:
+      0
+      0
+      80px;
+  }
+
+  .narration-section .section-label {
+    margin-bottom: 25px;
+  }
+
+
+  /* ========================================
+     LISTEN MOBILE
+  ======================================== */
+
+  .listen-section {
+    width: 100%;
+
+    margin-bottom: 85px;
+  }
+
+  .listen-heading {
+    display: block;
+
+    margin-bottom: 35px;
+  }
+
+  .listen-heading .section-label {
+    margin-bottom: 20px;
+  }
+
+  .listen-heading h2 {
+    margin-bottom: 15px;
+
+    font-size: 34px;
+  }
+
+  .listen-heading > p:last-child {
+    max-width: 280px;
+  }
+
+
+  /* RECORDINGS */
+
+  .recording {
+    display: block;
+
+    padding:
+      22px
+      0
+      26px;
+  }
+
+  .recording-header {
+    margin-bottom: 18px;
+  }
+
+  .soundcloud-player iframe {
+    height: 120px;
+  }
+
+
+  /* CONTEXT */
+
+  .context-section {
+    width: 100%;
+
+    margin:
+      0
+      0
+      70px;
+  }
+
+  .context-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 30px;
+  }
+
+  .context-grid > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+
+  /* COLLABORATION */
+
+  .collaboration-section {
+    display: block;
+
+    width: 94%;
+
+    margin:
+      0
+      0
+      70px;
+  }
+
+
+  /* CREDITS */
+
+  .credits-section {
+    display: block;
+
+    width: 94%;
+
+    margin:
+      0
+      0
+      80px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 430px) {
+
+  .project-layout {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+  .project-header h1 {
+    font-size: 42px;
+  }
+
+
+  /*
+     Sur les téléphones très étroits,
+     je repasse les photos l'une sous
+     l'autre pour éviter qu'elles
+     deviennent minuscules.
+  */
+
+  .image-pair-section {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .image-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  .context-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .context-grid > div:last-child {
+    grid-column: auto;
+  }
+
+}
