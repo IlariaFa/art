@@ -1,6 +1,11 @@
-/* ========================================
+/* =========================================================
+   RÉVERBÉRATIONS JOYEUSES — ILARIA FANTINI
+========================================================= */
+
+
+/* =========================================================
    RESET
-======================================== */
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -12,37 +17,66 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
-/* ========================================
-   PAGE
-======================================== */
+body {
+  min-height: 100vh;
+}
 
-body.reverberations-page {
-  background-color: #9eeb84;
-  color: #111;
+img {
+  display: block;
+  max-width: 100%;
+}
 
-  font-family: Arial, Helvetica, sans-serif;
+figure,
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 
-/* ========================================
+/* =========================================================
+   PAGE
+========================================================= */
+
+body.reverberations-page {
+  background: #9eeb84;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
    BACK
-======================================== */
+========================================================= */
 
 .back-link {
   position: fixed;
 
-  top: 28px;
-  left: 32px;
+  top: 25px;
+  left: 30px;
 
   z-index: 100;
 
-  color: #111;
-  text-decoration: none;
-
   font-size: 14px;
 
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .back-link:hover {
@@ -50,365 +84,573 @@ body.reverberations-page {
 }
 
 
-/* ========================================
-   MAIN LAYOUT
-======================================== */
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
 
 .reverberations-layout {
-  width: 100%;
+  width: min(1180px, 86vw);
+
+  margin: 0 auto;
 
   padding:
-    120px
-    7vw
-    100px;
+    100px
+    0
+    80px;
 }
 
 
-/* ========================================
+/* =========================================================
    HEADER
-======================================== */
+========================================================= */
 
 .project-header {
-  width: 86%;
+  width: 100%;
 
-  margin:
-    0 auto
-    140px;
+  margin-bottom: 65px;
 }
-
 
 .project-label {
-  margin:
-    0 0
-    38px;
+  margin-bottom: 16px;
 
-  font-size: 13px;
+  font-size: 10px;
+  line-height: 1.2;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
 }
 
-
 .project-header h1 {
-  margin: 0;
+  margin-bottom: 22px;
 
-  max-width: 850px;
+  max-width: 760px;
 
-  font-size:
-    clamp(48px, 7vw, 105px);
-
+  font-size: clamp(54px, 6vw, 84px);
   font-weight: 400;
-
-  line-height: 0.9;
+  line-height: 0.88;
 
   letter-spacing: -0.035em;
 }
 
-
 .project-meta {
-  margin:
-    32px 0
-    0;
+  margin-bottom: 0;
 
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 
-/* ========================================
+/* =========================================================
    INTRODUCTION
-======================================== */
+========================================================= */
 
 .project-intro {
   display: grid;
 
   grid-template-columns:
-    1fr
-    2fr;
+    130px
+    minmax(300px, 430px);
 
-  gap: 80px;
+  gap: 75px;
 
-  width: 72%;
+  align-items: start;
 
-  margin:
-    0 auto
-    150px;
+  margin-bottom: 75px;
 }
 
 
 /* KEYWORDS */
 
 .project-fields p {
-  margin:
-    0 0
-    8px;
+  margin: 0 0 9px;
 
-  font-size: 12px;
+  font-size: 10px;
+  line-height: 1.2;
 
-  letter-spacing: 0.06em;
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
 }
 
 
 /* INTRO TEXT */
 
 .intro-text {
-  max-width: 650px;
+  max-width: 430px;
 }
-
 
 .intro-text p {
-  margin:
-    0 0
-    24px;
+  margin: 0 0 17px;
 
-  font-size:
-    clamp(17px, 1.4vw, 20px);
-
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.48;
 }
 
 
-/* ========================================
-   IMAGES
-======================================== */
+/* =========================================================
+   GENERAL LABELS
+========================================================= */
 
-.image-section {
+.section-label {
+  margin: 0 0 18px;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+.small-label {
+  margin: 0 0 9px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAPTIONS
+========================================================= */
+
+figcaption {
+  margin-top: 8px;
+
+  font-size: 9px;
+  line-height: 1.3;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   IMAGE PRINCIPALE
+========================================================= */
+
+/*
+   Plus petite que précédemment.
+
+   Elle reste isolée dans l'espace,
+   mais ne devient plus un grand bandeau.
+*/
+
+.hero-section {
   width: 100%;
 
-  margin-bottom: 150px;
+  margin-bottom: 75px;
+}
+
+.hero-image {
+  width: 61%;
+
+  margin-left: 7%;
+}
+
+.hero-image img {
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+  object-position: center;
 }
 
 
-.image-section figure {
+/* =========================================================
+   WORKSHOP
+========================================================= */
+
+/*
+   Le texte vient relativement près
+   de l'image précédente afin que les
+   deux éléments soient lus ensemble.
+*/
+
+.workshop-section {
+  width: 38%;
+
+  margin:
+    0
+    0
+    95px
+    7%;
+}
+
+.workshop-text {
+  max-width: 390px;
+}
+
+.workshop-text p {
+  margin: 0 0 16px;
+
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+/*
+   Grande composition asymétrique :
+   texte à gauche,
+   photographie à droite.
+*/
+
+.performance-section {
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 0.72fr)
+    minmax(480px, 1.45fr);
+
+  grid-template-areas:
+    "text image";
+
+  gap: 70px;
+
+  align-items: center;
+
+  width: 94%;
+
+  margin:
+    0
+    0
+    105px
+    auto;
+}
+
+
+/* PERFORMANCE TEXT */
+
+.performance-text {
+  grid-area: text;
+
+  max-width: 340px;
+}
+
+.performance-text p:not(.section-label) {
+  margin: 0 0 17px;
+
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+
+/* PERFORMANCE IMAGE */
+
+.performance-image {
+  grid-area: image;
+
+  width: 100%;
+
+  margin: 0;
+}
+
+.performance-image img {
+  width: 100%;
+
+  /*
+     Hauteur contrôlée :
+     l'image n'est plus déterminée
+     uniquement par son fichier original.
+  */
+
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+
+  /*
+     IMPORTANT :
+     on privilégie la partie supérieure
+     de ta photographie.
+  */
+
+  object-position: center 15%;
+}
+
+
+/* =========================================================
+   INTERACTION / MANIPULATION
+========================================================= */
+
+/*
+   Partie volontairement plus généreuse.
+
+   Ces deux images sont importantes :
+   elles montrent concrètement le public,
+   les gestes et la manipulation.
+*/
+
+.interaction-section {
+  width: 96%;
+
+  margin:
+    0
+    auto
+    110px;
+}
+
+.interaction-section > .section-label {
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   TWO INTERACTION IMAGES
+========================================================= */
+
+.interaction-images {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  width: 100%;
+}
+
+.interaction-images figure {
+  width: 100%;
+
   margin: 0;
 }
 
 
-.image-section img {
-  display: block;
+/*
+   Les deux images ont exactement
+   la même taille visuelle.
+*/
 
+.interaction-images img {
   width: 100%;
-  height: auto;
+
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+  object-position: center;
 }
 
 
-.image-section figcaption {
-  margin-top: 10px;
+/*
+   Si tu souhaites ajuster individuellement
+   leur cadrage :
+*/
 
-  font-size: 11px;
+.interaction-images figure:first-child img {
+  object-position: center;
+}
 
-  letter-spacing: 0.06em;
+.interaction-images figure:nth-child(2) img {
+  object-position: center 25%;
 }
 
 
-/* ========================================
-   PREMIÈRE IMAGE
-======================================== */
+/* =========================================================
+   TEXTE SOUS LES DEUX IMAGES
+========================================================= */
 
-.image-section-one {
-  width: 62%;
+/*
+   Ton HTML semble contenir un paragraphe
+   directement dans interaction-section,
+   après interaction-images.
+*/
 
-  margin-left: 8%;
-  margin-right: auto;
-
-  margin-bottom: 150px;
-}
-
-
-/* ========================================
-   DEUXIÈME IMAGE
-======================================== */
-
-.image-section-two {
-  width: 52%;
-
-  margin-left: auto;
-  margin-right: 8%;
-
-  margin-bottom: 150px;
-}
-
-
-/* ========================================
-   TEXT SECTIONS
-======================================== */
-
-.text-section {
-  width: 68%;
+.interaction-section > p:not(.section-label) {
+  width: 70%;
 
   margin:
-    0 auto
-    150px;
+    18px
+    0
+    0;
+
+  font-size: 15px;
+  line-height: 1.45;
 }
 
 
-.section-label {
-  margin:
-    0 0
-    45px;
-
-  font-size: 13px;
-
-  letter-spacing: 0.08em;
-}
-
-
-.section-text {
-  width: 62%;
-
-  margin-left: auto;
-}
-
-
-.section-text p {
-  margin:
-    0 0
-    22px;
-
-  font-size:
-    clamp(16px, 1.25vw, 19px);
-
-  line-height: 1.5;
-}
-
-
-/* ========================================
-   WORKSHOP
-======================================== */
-
-.workshop-section {
-  margin-left: 14%;
-}
-
-
-/* ========================================
-   PERFORMANCE
-======================================== */
-
-.performance-section {
-  margin-right: 10%;
-}
-
-
-/* ========================================
-   CONTEXT
-======================================== */
+/* =========================================================
+   CONTEXT + ARTISTIC DIRECTION
+========================================================= */
 
 .context-section {
-  width: 72%;
+  display: inline-block;
 
-  margin:
-    0 auto
-    150px;
+  vertical-align: top;
+
+  width: 60%;
+
+  margin-bottom: 80px;
 }
 
+.credits-section {
+  display: inline-block;
+
+  vertical-align: top;
+
+  width: 32%;
+
+  margin-left: 6%;
+
+  margin-bottom: 80px;
+}
+
+
+/* =========================================================
+   CONTEXT
+========================================================= */
 
 .context-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    1.3fr
+    0.6fr
+    1fr;
 
-  gap: 50px;
+  gap: 35px;
+}
+
+.context-grid p {
+  margin-bottom: 0;
+
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 
-.context-grid p {
+/* =========================================================
+   CREDITS
+========================================================= */
+
+.credits-content h2 {
+  margin: 0 0 12px;
+
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.credits-content p {
+  max-width: 290px;
+
   margin: 0;
 
-  font-size: 16px;
-
+  font-size: 12px;
   line-height: 1.45;
 }
 
 
-.context-grid .small-label {
-  margin-bottom: 12px;
-
-  font-size: 11px;
-
-  letter-spacing: 0.08em;
-}
-
-
-/* ========================================
-   CREDITS
-======================================== */
-
-.credits-section {
-  width: 60%;
-
-  margin:
-    0 0
-    160px
-    20%;
-}
-
-
-.credits-content {
-  width: 65%;
-
-  margin-left: auto;
-}
-
-
-.credits-content h2 {
-  margin:
-    0 0
-    18px;
-
-  font-size: 24px;
-
-  font-weight: 400;
-}
-
-
-.credits-content p {
-  margin: 0;
-
-  font-size: 16px;
-
-  line-height: 1.5;
-}
-
-
-/* ========================================
+/* =========================================================
    FOOTER
-======================================== */
+========================================================= */
 
 .project-footer {
-  width: 86%;
+  clear: both;
 
-  margin: 0 auto;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.5);
 }
-
 
 .project-footer a {
-  color: #111;
+  font-size: 13px;
 
-  text-decoration: none;
-
-  font-size: 14px;
-
-  transition: text-shadow 0.3s ease;
+  transition: opacity 0.25s ease;
 }
-
 
 .project-footer a:hover {
-  text-shadow:
-    0 0 3px rgba(19, 169, 106, 0.75),
-    0 0 7px rgba(19, 169, 106, 0.45),
-    0 0 14px rgba(19, 169, 106, 0.22);
+  opacity: 0.5;
 }
 
 
-/* ========================================
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .reverberations-layout {
+    width: 86vw;
+  }
+
+
+  /* INTRO */
+
+  .project-intro {
+    grid-template-columns:
+      110px
+      minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+
+  /* HERO */
+
+  .hero-image {
+    width: 72%;
+
+    margin-left: 4%;
+  }
+
+
+  /* WORKSHOP */
+
+  .workshop-section {
+    width: 48%;
+
+    margin-left: 4%;
+  }
+
+
+  /* PERFORMANCE */
+
+  .performance-section {
+    grid-template-columns:
+      minmax(220px, 0.7fr)
+      minmax(360px, 1.3fr);
+
+    gap: 45px;
+
+    width: 100%;
+  }
+
+
+  /* INTERACTION */
+
+  .interaction-section {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
    MOBILE
-======================================== */
+========================================================= */
 
 @media (max-width: 700px) {
+
+  body.reverberations-page {
+    overflow-x: hidden;
+  }
+
 
   /* BACK */
 
   .back-link {
+    position: absolute;
+
     top: 20px;
     left: 20px;
   }
@@ -417,38 +659,32 @@ body.reverberations-page {
   /* MAIN */
 
   .reverberations-layout {
+    width: auto;
+
+    margin: 0;
+
     padding:
-      90px
+      85px
       20px
-      80px;
+      55px;
   }
 
 
   /* HEADER */
 
   .project-header {
-    width: 100%;
-
-    margin-bottom: 90px;
-  }
-
-
-  .project-label {
-    margin-bottom: 25px;
-
-    font-size: 11px;
+    margin-bottom: 55px;
   }
 
 
   .project-header h1 {
-    font-size: clamp(42px, 14vw, 65px);
-
-    line-height: 0.94;
+    font-size: clamp(44px, 14vw, 62px);
+    line-height: 0.92;
   }
 
 
   .project-meta {
-    margin-top: 25px;
+    font-size: 14px;
   }
 
 
@@ -457,19 +693,23 @@ body.reverberations-page {
   .project-intro {
     display: block;
 
-    width: 100%;
-
-    margin-bottom: 90px;
+    margin-bottom: 55px;
   }
 
 
   .project-fields {
-    margin-bottom: 45px;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px 15px;
+
+    margin-bottom: 30px;
   }
 
 
   .project-fields p {
-    font-size: 11px;
+    margin: 0;
   }
 
 
@@ -479,94 +719,230 @@ body.reverberations-page {
 
 
   .intro-text p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
 
-  /* IMAGES */
+  /* HERO */
 
-  .image-section-one,
-  .image-section-two {
+  .hero-section {
+    margin-bottom: 60px;
+  }
+
+
+  .hero-image {
     width: 88%;
 
     margin-left: 0;
-    margin-right: 0;
-
-    margin-bottom: 90px;
   }
 
 
-  .image-section-two {
+  .hero-image img {
+    aspect-ratio: auto;
+
+    height: auto;
+
+    object-fit: contain;
+  }
+
+
+  /* WORKSHOP */
+
+  .workshop-section {
+    width: 90%;
+
+    margin:
+      0
+      0
+      70px;
+  }
+
+
+  /* PERFORMANCE */
+
+  .performance-section {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 28px;
+
+    width: 100%;
+
+    margin:
+      0
+      0
+      80px;
+  }
+
+
+  /*
+     Sur mobile :
+     texte d'abord,
+     puis photographie.
+  */
+
+  .performance-text {
+    order: 1;
+
+    width: 88%;
+    max-width: none;
+  }
+
+
+  .performance-image {
+    order: 2;
+
+    width: 92%;
+
     margin-left: auto;
   }
 
 
-  /* TEXT */
+  .performance-image img {
+    aspect-ratio: 4 / 3;
 
-  .text-section {
+    object-fit: cover;
+
+    object-position: center 15%;
+  }
+
+
+  /* INTERACTION */
+
+  .interaction-section {
     width: 100%;
 
-    margin:
-      0 0
-      90px;
+    margin-bottom: 85px;
   }
 
 
-  .section-label {
-    margin-bottom: 35px;
+  .interaction-images {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 32px;
   }
 
 
-  .section-text {
-    width: 88%;
-
-    margin-left: 0;
+  .interaction-images figure {
+    width: 92%;
   }
 
 
-  .section-text p {
-    font-size: 18px;
+  .interaction-images figure:nth-child(2) {
+    align-self: flex-end;
+  }
+
+
+  /*
+     Sur téléphone on préserve davantage
+     les proportions originales.
+  */
+
+  .interaction-images img {
+    aspect-ratio: auto;
+
+    height: auto;
+
+    object-fit: contain;
+  }
+
+
+  .interaction-section > p:not(.section-label) {
+    width: 92%;
+
+    font-size: 15px;
   }
 
 
   /* CONTEXT */
 
   .context-section {
+    display: block;
+
     width: 100%;
 
-    margin-bottom: 100px;
+    margin-bottom: 60px;
   }
 
 
   .context-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr
+      1fr;
 
-    gap: 35px;
+    gap: 30px;
+  }
+
+
+  .context-grid > div:last-child {
+    grid-column: 1 / -1;
   }
 
 
   /* CREDITS */
 
   .credits-section {
-    width: 100%;
+    display: block;
+
+    width: 82%;
 
     margin:
-      0 0
-      110px;
+      0
+      0
+      65px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .reverberations-layout {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
 
-  .credits-content {
-    width: 88%;
-
-    margin-left: 0;
+  .project-header h1 {
+    font-size: 44px;
   }
 
 
-  /* FOOTER */
+  .hero-image {
+    width: 94%;
+  }
 
-  .project-footer {
-    width: 100%;
+
+  .workshop-section,
+  .performance-text {
+    width: 95%;
+  }
+
+
+  .performance-image {
+    width: 95%;
+  }
+
+
+  .interaction-images figure {
+    width: 95%;
+  }
+
+
+  .context-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .context-grid > div:last-child {
+    grid-column: auto;
   }
 
 }
