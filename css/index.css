@@ -10,6 +10,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+
   width: 100%;
   min-height: 100%;
 }
@@ -119,12 +120,6 @@ body.home {
    HALO AU SURVOL
 ======================================== */
 
-/*
-   Halo assez léger :
-   présent, mais sans devenir l'élément
-   principal de la page.
-*/
-
 .menu-item:hover span {
   text-shadow:
     0 0 3px rgba(19, 169, 106, 0.65),
@@ -154,7 +149,7 @@ body.home {
 */
 
 
-/* recherche actuelle */
+/* ONGOING RESEARCH */
 
 .ongoing {
   top: 18%;
@@ -162,8 +157,7 @@ body.home {
 }
 
 
-/* sound prend l'ancienne position forte
-   de Drawings */
+/* SOUND */
 
 .sound {
   top: 12%;
@@ -171,7 +165,7 @@ body.home {
 }
 
 
-/* films reste très visible à gauche */
+/* FILMS */
 
 .films {
   top: 42%;
@@ -179,7 +173,7 @@ body.home {
 }
 
 
-/* workshops reste au centre */
+/* WORKSHOPS */
 
 .workshops {
   top: 47%;
@@ -187,7 +181,7 @@ body.home {
 }
 
 
-/* drawings devient plus périphérique */
+/* DRAWINGS */
 
 .drawings {
   top: 66%;
@@ -195,7 +189,7 @@ body.home {
 }
 
 
-/* writings / editions */
+/* WRITINGS / EDITIONS */
 
 .writings {
   top: 80%;
@@ -203,7 +197,7 @@ body.home {
 }
 
 
-/* about */
+/* ABOUT */
 
 .about {
   top: 80%;
@@ -216,8 +210,8 @@ body.home {
 ======================================== */
 
 /*
-   Sur ordinateur uniquement :
-   disparition de la flèche native.
+   Le curseur personnalisé est utilisé
+   uniquement avec une vraie souris.
 */
 
 @media (pointer: fine) {
@@ -256,11 +250,6 @@ body.home {
   transform: translate(-50%, -50%);
 
   opacity: 0;
-
-  /*
-     Aucun blur :
-     le point reste précis et discret.
-  */
 
   filter: none;
 
@@ -304,15 +293,6 @@ body.cursor-visible .soft-cursor {
    IMAGE PREVIEW
 ======================================== */
 
-/*
-   L'image apparaît près de la rubrique,
-   mais pas collée au mot.
-
-   Elle doit ressembler à une apparition
-   dans l'espace plutôt qu'à une vignette
-   de menu.
-*/
-
 .index-preview {
   position: fixed;
 
@@ -329,13 +309,6 @@ body.cursor-visible .soft-cursor {
   z-index: 20;
 
   opacity: 0;
-
-  /*
-     Distance entre curseur et image.
-
-     Pour rapprocher encore l'image :
-     diminue 28px et 20px.
-  */
 
   transform:
     translate(28px, 20px)
@@ -358,11 +331,6 @@ body.cursor-visible .soft-cursor {
   height: 100%;
 
   object-fit: cover;
-
-  /*
-     Légèrement transparente,
-     sans devenir fade.
-  */
 
   opacity: 0.86;
 
@@ -397,7 +365,11 @@ body.cursor-visible .soft-cursor {
 
   width: 245px;
 
-  padding: 18px 35px 18px 18px;
+  padding:
+    18px
+    35px
+    18px
+    18px;
 
   background: rgba(255, 255, 255, 0.22);
 
@@ -436,11 +408,13 @@ body.cursor-visible .soft-cursor {
   padding: 0;
 
   border: 0;
+
   background: transparent;
 
   color: #111;
 
   font-family: Arial, Helvetica, sans-serif;
+
   font-size: 17px;
   font-weight: 400;
   line-height: 1;
@@ -462,11 +436,31 @@ body.cursor-visible .soft-cursor {
 
 @media (max-width: 700px) {
 
+
+  /* ----------------------------------------
+     PAGE
+  ----------------------------------------- */
+
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+  }
+
+
   body.home {
     width: 100%;
-    min-height: 100vh;
 
-    overflow: hidden;
+    /*
+       svh est plus stable que vh sur mobile,
+       notamment avec Safari et sa barre
+       d'adresse dynamique.
+    */
+
+    min-height: 100svh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
 
@@ -475,6 +469,8 @@ body.cursor-visible .soft-cursor {
   ----------------------------------------- */
 
   .name {
+    position: absolute;
+
     top: 18px;
     left: 18px;
 
@@ -489,9 +485,24 @@ body.cursor-visible .soft-cursor {
   ----------------------------------------- */
 
   .floating-menu {
+    position: relative;
+
     width: 100%;
-    height: 100vh;
-    min-height: 100vh;
+
+    /*
+       La composition utilise la hauteur
+       réellement disponible sur mobile.
+    */
+
+    height: 100svh;
+
+    /*
+       Empêche les derniers éléments
+       de se retrouver hors écran sur
+       les téléphones très courts.
+    */
+
+    min-height: 650px;
   }
 
 
@@ -544,8 +555,13 @@ body.cursor-visible .soft-cursor {
   }
 
 
+  /*
+     About est légèrement remonté
+     pour garantir qu'il reste visible.
+  */
+
   .about {
-    top: 84%;
+    top: 81%;
     left: 50%;
   }
 
@@ -555,10 +571,15 @@ body.cursor-visible .soft-cursor {
   ----------------------------------------- */
 
   .site-note {
+    position: fixed;
+
     right: 14px;
     bottom: 14px;
 
-    width: min(220px, calc(100vw - 28px));
+    width: min(
+      220px,
+      calc(100vw - 28px)
+    );
 
     padding:
       14px
@@ -602,11 +623,25 @@ body.cursor-visible .soft-cursor {
 
 @media (max-width: 430px) {
 
+
+  /* ----------------------------------------
+     NOM
+  ----------------------------------------- */
+
   .name {
     top: 16px;
     left: 14px;
 
     font-size: 27px;
+  }
+
+
+  /* ----------------------------------------
+     MENU
+  ----------------------------------------- */
+
+  .floating-menu {
+    min-height: 620px;
   }
 
 
@@ -657,13 +692,21 @@ body.cursor-visible .soft-cursor {
   }
 
 
+  /*
+     Important :
+     About reste suffisamment haut
+     pour ne pas être coupé.
+  */
+
   .about {
-    top: 84%;
+    top: 81%;
     left: 46%;
   }
 
 
-  /* note légèrement plus petite */
+  /* ----------------------------------------
+     NOTE
+  ----------------------------------------- */
 
   .site-note {
     width: 200px;
