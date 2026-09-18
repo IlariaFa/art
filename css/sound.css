@@ -1,3 +1,8 @@
+/* =========================================================
+   SOUND — ILARIA FANTINI
+========================================================= */
+
+
 /* ========================================
    RESET
 ======================================== */
@@ -6,10 +11,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+
+  width: 100%;
+  min-height: 100%;
 }
 
 
@@ -18,10 +30,33 @@ body {
 ======================================== */
 
 body.sound-page {
+  min-height: 100vh;
+
   background-color: #9eeb84;
   color: #111;
 
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   IMAGES
+======================================== */
+
+img {
+  display: block;
+
+  max-width: 100%;
 }
 
 
@@ -32,16 +67,19 @@ body.sound-page {
 .back-home {
   position: fixed;
 
-  top: 28px;
-  left: 32px;
+  top: 14px;
+  left: 4px;
 
   z-index: 100;
 
-  color: #111;
-  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
 
-  font-size: 14px;
+  transition:
+    opacity 0.25s ease,
+    text-shadow 0.25s ease;
 }
+
 
 .back-home:hover {
   opacity: 0.55;
@@ -49,43 +87,53 @@ body.sound-page {
 
 
 /* ========================================
-   MAIN
+   MAIN LAYOUT
 ======================================== */
 
 .sound-layout {
   width: 100%;
 
-  padding:
-    110px
-    7vw
-    170px;
+  padding-bottom: 140px;
 }
 
 
 /* ========================================
-   PAGE TITLE
+   PAGE HEADER
 ======================================== */
 
 .page-header {
-  margin-bottom: 120px;
+  width: 86%;
+
+  margin: 0 auto;
+
+  padding-top: 20px;
 }
+
 
 .page-header h1 {
   margin: 0;
 
-  font-size: clamp(42px, 6vw, 82px);
+  font-size: clamp(72px, 8vw, 125px);
   font-weight: 400;
 
-  line-height: 1;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
 }
 
 
 /* ========================================
-   PROJECTS CONTAINER
+   PROJECTS
 ======================================== */
 
 .sound-projects {
-  width: 100%;
+  width: 73%;
+
+  margin: 145px auto 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 155px;
 }
 
 
@@ -94,12 +142,7 @@ body.sound-page {
 ======================================== */
 
 .sound-project {
-  display: block;
-
-  color: #111;
-  text-decoration: none;
-
-  margin-bottom: 150px;
+  width: 100%;
 }
 
 
@@ -108,29 +151,42 @@ body.sound-page {
 ======================================== */
 
 .sound-project-header {
-  margin-bottom: 24px;
+  margin-bottom: 34px;
 }
 
-.sound-project h2 {
-  margin:
-    0
-    0
-    8px;
 
-  font-size: clamp(30px, 4vw, 58px);
+.sound-project-header h2 {
+  margin: 0 0 14px;
+
+  font-size: clamp(42px, 4.7vw, 76px);
   font-weight: 400;
 
-  line-height: 1.02;
-
-  transition:
-    text-shadow 0.45s ease;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
 }
 
-.sound-project p {
+
+.sound-project-header p {
   margin: 0;
 
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.35;
+}
+
+
+/* ========================================
+   IMAGE LINK
+======================================== */
+
+.sound-image-link {
+  display: block;
+
+  width: 100%;
+
+  color: inherit;
+  text-decoration: none;
 }
 
 
@@ -139,10 +195,13 @@ body.sound-page {
 ======================================== */
 
 .sound-image {
+  width: 100%;
+
   margin: 0;
 
   overflow: hidden;
 }
+
 
 .sound-image img {
   display: block;
@@ -151,91 +210,180 @@ body.sound-page {
   height: auto;
 
   transition:
-    transform 0.5s ease,
-    filter 0.5s ease;
+    transform 0.45s ease,
+    filter 0.45s ease;
 }
 
 
 /* ========================================
-   HOVER
+   IMAGE HOVER
 ======================================== */
 
-.sound-project:hover h2 {
+@media (hover: hover) and (pointer: fine) {
+
+  .sound-image-link:hover img {
+    transform: scale(1.012);
+
+    filter: contrast(1.025);
+  }
+
+}
+
+
+/* ========================================
+   MORE INFO
+======================================== */
+
+/*
+   Le lien reste discret mais clairement
+   identifiable comme élément cliquable.
+
+   Le soulignement crée une cohérence
+   avec les autres éléments interactifs
+   du portfolio.
+*/
+
+.sound-more {
+  display: inline-block;
+
+  margin-top: 16px;
+  padding-bottom: 3px;
+
+  color: #111;
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  border-bottom: 1px solid #111;
+
+  transition:
+    text-shadow 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* ========================================
+   MORE INFO — HOVER
+======================================== */
+
+.sound-more:hover {
+  border-color: transparent;
+
   text-shadow:
-    0 0 4px rgba(19, 169, 106, 0.95),
-    0 0 10px rgba(19, 169, 106, 0.55),
-    0 0 20px rgba(19, 169, 106, 0.25);
-}
-
-.sound-project:hover .sound-image img {
-  transform: scale(1.012);
-
-  filter: contrast(1.03);
+    0 0 3px rgba(19, 169, 106, 0.75),
+    0 0 7px rgba(19, 169, 106, 0.45),
+    0 0 14px rgba(19, 169, 106, 0.22);
 }
 
 
 /* ========================================
-   INDIVIDUAL PROJECT POSITIONS
+   INDIVIDUAL PROJECT WIDTHS
 ======================================== */
 
+/*
+   Les projets ne sont pas obligés
+   d'occuper exactement la même largeur.
 
-/* BEMPT */
+   Cela garde un rythme plus éditorial
+   et moins "grille de portfolio".
+*/
 
-.bempt {
-  width: 42%;
-  margin-left: 8%;
+
+/* VOIX DE BEMPT */
+
+.sound-project.bempt {
+  width: 64%;
 }
 
 
 /* RADIO MARIE CHRISTINE */
 
-.radio-marie {
-  width: 40%;
-  margin-left: 48%;
+.sound-project.radio-marie {
+  width: 58%;
+
+  margin-left: 28%;
 }
 
 
-/* CHANTS */
+/* VOIX ET CORPS */
 
-.chants {
-  width: 38%;
-  margin-left: 15%;
+.sound-project.chants {
+  width: 62%;
+
+  margin-left: 7%;
 }
 
 
-/* BRUITS */
+/* RÉVERBÉRATIONS JOYEUSES */
 
-.bruits {
-  width: 42%;
-  margin-left: 40%;
+.sound-project.bruits {
+  width: 60%;
+
+  margin-left: 31%;
 }
+
 
 /* ========================================
-   IMAGE PROPORTIONS
+   TABLET
 ======================================== */
 
-.bempt .sound-image img {
-  aspect-ratio: 16 / 9;
+@media (max-width: 950px) {
 
-  object-fit: cover;
-}
+  .page-header {
+    width: 84%;
+  }
 
-.radio-marie .sound-image img {
-  aspect-ratio: 16 / 9;
 
-  object-fit: cover;
-}
+  .page-header h1 {
+    font-size: clamp(70px, 11vw, 105px);
+  }
 
-.chants .sound-image img {
-  aspect-ratio: 4 / 3;
 
-  object-fit: cover;
-}
+  .sound-projects {
+    width: 82%;
 
-.bruits .sound-image img {
-  aspect-ratio: 16 / 9;
+    margin-top: 120px;
 
-  object-fit: cover;
+    gap: 130px;
+  }
+
+
+  .sound-project-header h2 {
+    font-size: clamp(38px, 6vw, 62px);
+  }
+
+
+  /* projets légèrement plus grands */
+
+  .sound-project.bempt {
+    width: 72%;
+  }
+
+
+  .sound-project.radio-marie {
+    width: 68%;
+
+    margin-left: 24%;
+  }
+
+
+  .sound-project.chants {
+    width: 72%;
+
+    margin-left: 5%;
+  }
+
+
+  .sound-project.bruits {
+    width: 70%;
+
+    margin-left: 24%;
+  }
+
 }
 
 
@@ -245,96 +393,198 @@ body.sound-page {
 
 @media (max-width: 700px) {
 
-  /* BACK */
 
-  .back-home {
-    top: 20px;
-    left: 20px;
+  /* ----------------------------------------
+     PAGE
+  ----------------------------------------- */
+
+  body.sound-page {
+    min-height: 100svh;
   }
 
-
-  /* MAIN */
 
   .sound-layout {
-    padding:
-      85px
-      20px
-      110px;
+    padding-bottom: 90px;
   }
 
 
-  /* TITLE */
+  /* ----------------------------------------
+     BACK
+  ----------------------------------------- */
+
+  .back-home {
+    position: absolute;
+
+    top: 12px;
+    left: 4px;
+
+    font-size: 17px;
+  }
+
+
+  /* ----------------------------------------
+     PAGE TITLE
+  ----------------------------------------- */
 
   .page-header {
-    margin-bottom: 80px;
+    width: auto;
+
+    margin: 0;
+
+    padding:
+      55px
+      18px
+      0;
   }
+
 
   .page-header h1 {
-    font-size: 46px;
+    font-size: clamp(58px, 18vw, 82px);
+
+    line-height: 0.95;
   }
 
 
-  /* PROJECT */
+  /* ----------------------------------------
+     PROJECTS
+  ----------------------------------------- */
 
-  .sound-project {
-    width: 100%;
+  .sound-projects {
+    width: auto;
 
     margin:
-      0
-      0
-      90px;
+      95px
+      18px
+      0;
+
+    gap: 105px;
   }
 
 
-  .sound-project h2 {
-    font-size: 34px;
+  /*
+     Sur mobile les décalages horizontaux
+     disparaissent pour améliorer la lecture.
+  */
+
+  .sound-project.bempt,
+  .sound-project.radio-marie,
+  .sound-project.chants,
+  .sound-project.bruits {
+    width: 100%;
+
+    margin-left: 0;
   }
 
 
-  .sound-project p {
-    font-size: 13px;
+  /* ----------------------------------------
+     PROJECT HEADER
+  ----------------------------------------- */
+
+  .sound-project-header {
+    margin-bottom: 24px;
   }
 
 
-  /* IMAGES */
+  .sound-project-header h2 {
+    margin-bottom: 11px;
 
-  .bempt .sound-image img,
-  .radio-marie .sound-image img,
-  .chants .sound-image img,
-  .bruits .sound-image img {
+    font-size: clamp(36px, 11vw, 52px);
+
+    line-height: 0.98;
+  }
+
+
+  .sound-project-header p {
+    max-width: 90%;
+
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+
+  /* ----------------------------------------
+     IMAGES
+  ----------------------------------------- */
+
+  .sound-image {
+    width: 100%;
+  }
+
+
+  .sound-image img {
     width: 100%;
     height: auto;
 
-    aspect-ratio: auto;
+    transform: none;
+  }
 
-    object-fit: contain;
+
+  /* ----------------------------------------
+     MORE INFO
+  ----------------------------------------- */
+
+  .sound-more {
+    margin-top: 14px;
+
+    padding-bottom: 3px;
+
+    font-size: 16px;
+
+    /*
+       Zone tactile légèrement plus confortable
+       sans modifier visuellement le lien.
+    */
+
+    padding-top: 3px;
   }
 
 }
 
-.sound-more {
-  display: inline-block;
 
-  margin-top: 14px;
+/* ========================================
+   VERY SMALL SCREENS
+======================================== */
 
-  color: #111;
-  text-decoration: none;
+@media (max-width: 430px) {
 
-  font-size: 15px;
-  font-weight: 400;
+  .page-header {
+    padding-top: 52px;
+  }
 
-  transition: text-shadow 0.3s ease;
-}
 
-.sound-more:hover {
-  text-shadow:
-    0 0 3px rgba(19, 169, 106, 0.75),
-    0 0 7px rgba(19, 169, 106, 0.45),
-    0 0 14px rgba(19, 169, 106, 0.22);
-}
+  .page-header h1 {
+    font-size: 60px;
+  }
 
-.sound-image-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
+
+  .sound-projects {
+    margin-top: 80px;
+
+    gap: 90px;
+  }
+
+
+  .sound-project-header {
+    margin-bottom: 20px;
+  }
+
+
+  .sound-project-header h2 {
+    font-size: 38px;
+  }
+
+
+  .sound-project-header p {
+    max-width: 100%;
+
+    font-size: 14px;
+  }
+
+
+  .sound-more {
+    margin-top: 13px;
+
+    font-size: 16px;
+  }
+
 }

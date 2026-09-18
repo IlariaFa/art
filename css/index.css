@@ -1,3 +1,8 @@
+/* =========================================================
+   INDEX / HOME — ILARIA FANTINI
+========================================================= */
+
+
 /* ========================================
    RESET
 ======================================== */
@@ -132,22 +137,6 @@ body.home {
    POSITIONS — DESKTOP
 ======================================== */
 
-/*
-   Hiérarchie :
-
-   Ongoing Research
-   Sound
-   Films
-
-   puis :
-
-   Workshops
-   Writings / Editions
-   Drawings
-
-   About reste plus bas.
-*/
-
 
 /* ONGOING RESEARCH */
 
@@ -206,13 +195,8 @@ body.home {
 
 
 /* ========================================
-   CURSEUR PERSONNALISÉ
+   CURSEUR PERSONNALISÉ — DESKTOP
 ======================================== */
-
-/*
-   Le curseur personnalisé est utilisé
-   uniquement avec une vraie souris.
-*/
 
 @media (pointer: fine) {
 
@@ -341,7 +325,7 @@ body.cursor-visible .soft-cursor {
 
 
 /* ========================================
-   IMAGE VISIBLE
+   IMAGE PREVIEW VISIBLE
 ======================================== */
 
 .index-preview.is-visible {
@@ -408,13 +392,11 @@ body.cursor-visible .soft-cursor {
   padding: 0;
 
   border: 0;
-
   background: transparent;
 
   color: #111;
 
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 17px;
   font-weight: 400;
   line-height: 1;
@@ -452,9 +434,9 @@ body.cursor-visible .soft-cursor {
     width: 100%;
 
     /*
-       svh est plus stable que vh sur mobile,
-       notamment avec Safari et sa barre
-       d'adresse dynamique.
+       100svh est plus stable sur mobile
+       que 100vh lorsque la barre du
+       navigateur apparaît / disparaît.
     */
 
     min-height: 100svh;
@@ -489,17 +471,12 @@ body.cursor-visible .soft-cursor {
 
     width: 100%;
 
-    /*
-       La composition utilise la hauteur
-       réellement disponible sur mobile.
-    */
-
     height: 100svh;
 
     /*
-       Empêche les derniers éléments
-       de se retrouver hors écran sur
-       les téléphones très courts.
+       Cette hauteur minimale empêche
+       About d'être coupé sur les écrans
+       mobiles plus courts.
     */
 
     min-height: 650px;
@@ -556,8 +533,8 @@ body.cursor-visible .soft-cursor {
 
 
   /*
-     About est légèrement remonté
-     pour garantir qu'il reste visible.
+     About est volontairement un peu
+     plus haut qu'avant.
   */
 
   .about {
@@ -571,8 +548,6 @@ body.cursor-visible .soft-cursor {
   ----------------------------------------- */
 
   .site-note {
-    position: fixed;
-
     right: 14px;
     bottom: 14px;
 
@@ -641,6 +616,7 @@ body.cursor-visible .soft-cursor {
   ----------------------------------------- */
 
   .floating-menu {
+    height: 100svh;
     min-height: 620px;
   }
 
@@ -693,9 +669,8 @@ body.cursor-visible .soft-cursor {
 
 
   /*
-     Important :
-     About reste suffisamment haut
-     pour ne pas être coupé.
+     About reste suffisamment loin
+     du bas de l'écran.
   */
 
   .about {
